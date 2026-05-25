@@ -20,15 +20,7 @@ function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
-        {/* Logo */}
-        <Link to="/" className="navbar__logo" onClick={closeMenu}>
-          <div className="navbar__logo-mark">
-            <span className="navbar__logo-tattoo">TATTOO</span>
-            <span className="navbar__logo-sloth">SLOTH INK</span>
-          </div>
-        </Link>
-
-        {/* Links centrales (desktop) */}
+        {/* Links a la izquierda (desktop) */}
         <ul className="navbar__links">
           <li>
             <NavLink
@@ -71,6 +63,15 @@ function Navbar() {
             </NavLink>
           </li>
         </ul>
+
+        {/* Logo centrado (imagen) */}
+        <Link to="/" className="navbar__logo" onClick={closeMenu}>
+          <img
+            src="/images/logo (Sloth Tattoo).png"
+            alt="Sloth Tattoo"
+            className="navbar__logo-img"
+          />
+        </Link>
 
         {/* Redes sociales (desktop) */}
         <div className="navbar__socials">

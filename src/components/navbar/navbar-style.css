@@ -23,53 +23,47 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 32px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 32px;
 }
 
-/* Logo */
+/* Logo (imagen, centrado) */
 .navbar__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   text-decoration: none;
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-base);
+  justify-self: center;
 }
 
 .navbar__logo:hover {
-  transform: scale(1.04);
+  transform: scale(1.06);
 }
 
-.navbar__logo-mark {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
+.navbar__logo-img {
+  height: 64px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(45, 209, 192, 0.25));
+  transition: height var(--transition-base), filter var(--transition-base);
 }
 
-.navbar__logo-tattoo {
-  font-family: var(--font-display);
-  font-size: 22px;
-  letter-spacing: 2px;
-  color: var(--color-catskill);
+.navbar--scrolled .navbar__logo-img {
+  height: 48px;
+  filter: drop-shadow(0 2px 8px rgba(45, 209, 192, 0.35));
 }
 
-.navbar__logo-sloth {
-  font-family: var(--font-body);
-  font-size: 10px;
-  letter-spacing: 4px;
-  color: var(--color-java);
-  margin-top: 2px;
-}
-
-/* Links */
+/* Links (izquierda) */
 .navbar__links {
   display: flex;
   list-style: none;
   gap: 36px;
   margin: 0;
   padding: 0;
+  justify-self: start;
 }
 
 .navbar__link {
@@ -108,11 +102,12 @@
   color: var(--color-java);
 }
 
-/* Socials */
+/* Socials (derecha) */
 .navbar__socials {
   display: flex;
   align-items: center;
   gap: 14px;
+  justify-self: end;
 }
 
 .navbar__social {
@@ -225,20 +220,35 @@
   }
   .navbar__toggle {
     display: flex;
+    justify-self: end;
   }
   .navbar__inner {
     padding: 0 20px;
+    grid-template-columns: auto 1fr auto;
+  }
+  .navbar__logo {
+    justify-self: start;
+    grid-column: 1;
+  }
+  .navbar__toggle {
+    grid-column: 3;
+  }
+  .navbar__logo-img {
+    height: 52px;
+  }
+  .navbar--scrolled .navbar__logo-img {
+    height: 42px;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar__logo-tattoo {
-    font-size: 18px;
-  }
-  .navbar__logo-sloth {
-    font-size: 9px;
-  }
   .navbar__mobile {
     width: 100%;
+  }
+  .navbar__logo-img {
+    height: 44px;
+  }
+  .navbar--scrolled .navbar__logo-img {
+    height: 38px;
   }
 }
