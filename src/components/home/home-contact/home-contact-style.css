@@ -1,0 +1,106 @@
+/* ── Home Contact ─────────────────────────────────────────── */
+.home-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bloque claro */
+.home-contact__light {
+  background-color: var(--color-bg-section);
+  padding: 80px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+/* Bloque oscuro */
+.home-contact__dark {
+  background-color: var(--color-bg-darker);
+  padding: 80px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.home-contact__eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--color-deep-sea);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.home-contact__eyebrow--dark {
+  color: var(--color-java);
+}
+
+.home-contact__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(26px, 3.5vw, 38px);
+  color: var(--color-bg-dark);
+  margin: 0;
+}
+
+.home-contact__title--dark {
+  color: var(--color-catskill);
+}
+
+.home-contact__desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--color-emperor);
+  max-width: 540px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.home-contact__desc--dark {
+  color: var(--color-casper);
+}
+
+.home-contact__cta {
+  margin-top: 16px;
+  background-color: var(--color-java);
+  color: var(--color-bg-dark);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 14px 36px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.home-contact__cta:hover {
+  transform: translateY(-3px) scale(1.04);
+  background-color: #46e3d2;
+  box-shadow: 0 10px 24px rgba(45, 209, 192, 0.5);
+}
+
+.home-contact__cta--filled {
+  background-color: var(--color-java);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .home-contact__light,
+  .home-contact__dark {
+    padding: 64px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-contact__light,
+  .home-contact__dark {
+    padding: 48px 16px;
+  }
+}
