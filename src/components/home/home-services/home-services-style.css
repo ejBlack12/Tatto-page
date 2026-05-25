@@ -1,0 +1,141 @@
+/* ── Home Services ────────────────────────────────────────── */
+.home-services {
+  background-color: var(--color-bg-section);
+  padding: 96px 32px;
+}
+
+.home-services__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-services__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 54px);
+  letter-spacing: 6px;
+  color: var(--color-bg-dark);
+  text-align: center;
+  margin: 0;
+}
+
+.home-services__title-accent {
+  color: var(--color-deep-sea);
+}
+
+.home-services__divider {
+  width: 90px;
+  height: 4px;
+  background-color: var(--color-java);
+  margin: 18px 0 56px;
+  border-radius: var(--radius-full);
+}
+
+.home-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+/* Tarjeta */
+.service-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 32px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(45, 209, 192, 0.15);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-java), var(--color-deep-sea));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(31, 111, 118, 0.18);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card__badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-java), var(--color-deep-sea));
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(45, 209, 192, 0.35);
+  transition: transform var(--transition-base);
+}
+
+.service-card:hover .service-card__badge {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.service-card__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-bg-dark);
+  margin: 0;
+}
+
+.service-card__desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-dove-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .home-services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-services {
+    padding: 72px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-services__grid {
+    grid-template-columns: 1fr;
+  }
+  .home-services {
+    padding: 56px 16px;
+  }
+}
