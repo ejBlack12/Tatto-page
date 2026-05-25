@@ -1,37 +1,41 @@
 /* ── Home Quote ───────────────────────────────────────────── */
 .home-quote {
   position: relative;
-  min-height: 460px;
+  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 96px 32px;
+  padding: 120px 32px;
   overflow: hidden;
 }
 
+/* Imagen de fondo (foto de tatuaje) en blanco y negro */
 .home-quote__bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(45, 209, 192, 0.06), transparent 60%),
-    linear-gradient(135deg, #08111B 0%, #1A2330 100%);
+  background-image: url('/images/tatuajes-realistas 1.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%) contrast(1.05);
+  transform: scale(1.02);
   transition: transform 8s ease;
 }
 
 .home-quote:hover .home-quote__bg {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
+/* Overlay oscuro para legibilidad */
 .home-quote__overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 30%, rgba(45, 209, 192, 0.1), transparent 60%),
-    linear-gradient(180deg, rgba(8, 17, 27, 0.55) 0%, rgba(15, 22, 32, 0.85) 100%);
+    radial-gradient(ellipse at 50% 50%, rgba(15, 22, 32, 0.55) 0%, rgba(8, 17, 27, 0.92) 75%),
+    linear-gradient(180deg, rgba(8, 17, 27, 0.7) 0%, rgba(8, 17, 27, 0.85) 100%);
 }
 
+/* Contenido */
 .home-quote__content {
   position: relative;
   z-index: 2;
@@ -40,55 +44,92 @@
   align-items: center;
   text-align: center;
   gap: 36px;
-  max-width: 880px;
+  max-width: 940px;
 }
 
+/* Comillas decorativas cyan */
+.home-quote__marks {
+  font-size: 48px;
+  color: var(--color-java);
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 16px rgba(45, 209, 192, 0.45));
+}
+
+/* Texto principal */
 .home-quote__text {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(22px, 3vw, 34px);
-  letter-spacing: 2px;
-  line-height: 1.45;
+  font-size: clamp(28px, 4vw, 46px);
+  letter-spacing: 3px;
+  line-height: 1.35;
   color: var(--color-catskill);
   margin: 0;
   text-transform: uppercase;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.7);
 }
 
+/* Botón estilo píldora */
 .home-quote__cta {
-  background-color: transparent;
-  border: 2px solid var(--color-catskill);
+  margin-top: 12px;
+  background-color: rgba(15, 22, 32, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
   color: var(--color-catskill);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 1px;
-  padding: 14px 32px;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  padding: 18px 44px;
   border-radius: var(--radius-full);
-  transition: all var(--transition-base);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition:
+    border-color 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .home-quote__cta:hover {
-  background-color: var(--color-java);
   border-color: var(--color-java);
-  color: var(--color-bg-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(45, 209, 192, 0.4);
+  background-color: rgba(45, 209, 192, 0.12);
+  color: var(--color-java);
+  box-shadow:
+    0 0 0 1px rgba(45, 209, 192, 0.3),
+    0 14px 32px rgba(45, 209, 192, 0.25);
+  transform: translateY(-2px);
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 768px) {
   .home-quote {
-    padding: 72px 24px;
-    min-height: 380px;
+    padding: 88px 24px;
+    min-height: 440px;
+  }
+  .home-quote__content {
+    gap: 28px;
+  }
+  .home-quote__marks {
+    font-size: 38px;
+  }
+  .home-quote__text {
+    letter-spacing: 2px;
   }
 }
 
 @media (max-width: 480px) {
   .home-quote {
-    padding: 56px 16px;
+    padding: 64px 16px;
+    min-height: 380px;
+  }
+  .home-quote__marks {
+    font-size: 32px;
   }
   .home-quote__text {
     letter-spacing: 1px;
+  }
+  .home-quote__cta {
+    padding: 16px 36px;
+    font-size: 14px;
   }
 }
