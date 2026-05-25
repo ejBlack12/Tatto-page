@@ -66,6 +66,40 @@ npm run preview
 npm run lint
 ```
 
+## Comandos de Instalación Manual de Dependencias
+
+Si necesitas instalar o actualizar las dependencias manualmente, utiliza estos comandos:
+
+### Instalar React + Vite
+
+```bash
+npm create vite@latest . -- --template react
+npm install
+```
+
+### Instalar Tailwind CSS y PostCSS
+
+```bash
+npm install tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+Este comando genera:
+- `tailwind.config.js` - Configuración de Tailwind CSS
+- `postcss.config.js` - Configuración de PostCSS
+
+### Instalar React Router DOM
+
+```bash
+npm install react-router-dom
+```
+
+### Instalar todas las dependencias del proyecto
+
+```bash
+npm install react react-dom react-router-dom tailwindcss postcss autoprefixer
+```
+
 ---
 
 # 1. Introducción
