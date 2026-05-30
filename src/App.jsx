@@ -3,6 +3,7 @@ import './styles/App.css';
 import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import HomePage from './pages/pages-home/HomePage';
+import PortfolioPage from './pages/portfolio/PortfolioPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <main className="app__main">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
         </Routes>
       </main>
       <Footer />
