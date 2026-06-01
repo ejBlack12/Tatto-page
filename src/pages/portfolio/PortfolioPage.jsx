@@ -1,13 +1,19 @@
+import Navbar from '../../components/navbar/navbar';
 import Techniques from '../../components/portfolio/Techniques';
 import Portfolio from '../../components/portfolio/Portfolio';
+import Footer from '../../components/Footer';
 import './PortfolioPage.css';
 
 function PortfolioPage() {
   return (
-    <div className="portfolio-page">
-      <Techniques />
-      <Portfolio />
-    </div>
+    <>
+      <Navbar />
+      <div className="portfolio-page">
+        <Techniques />
+        <Portfolio />
+      </div>
+      <Footer />
+    </>
   );
 }
 
