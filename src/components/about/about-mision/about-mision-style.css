@@ -1,0 +1,96 @@
+/* ── About Banner (full-width image) ──────────────────────── */
+.about-banner {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.about-banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 17, 27, 0.3) 0%,
+    rgba(8, 17, 27, 0.55) 100%
+  );
+}
+
+/* ── Misión / Visión ──────────────────────────────────────── */
+.about-mision {
+  background-color: var(--color-bg-dark);
+  padding: 80px 24px;
+}
+
+.about-mision__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.mision-card {
+  background-color: var(--color-card-dark);
+  border: 1px solid rgba(45, 209, 192, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  transition: border-color var(--transition-slow), transform var(--transition-slow);
+}
+
+.mision-card:hover {
+  border-color: rgba(45, 209, 192, 0.35);
+  transform: translateY(-4px);
+}
+
+.mision-card__icon {
+  font-size: 32px;
+  color: var(--color-java);
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.mision-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--color-catskill);
+  margin: 0 0 16px;
+}
+
+.mision-card__body {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.4vw, 15px);
+  font-weight: 300;
+  color: var(--color-casper);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-banner {
+    height: 220px;
+  }
+
+  .about-mision__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .mision-card {
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-mision {
+    padding: 56px 20px;
+  }
+}
