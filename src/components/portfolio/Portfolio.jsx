@@ -1,0 +1,78 @@
+import { useState } from 'react';
+
+const FILTERS = ['Todos', 'Minimalista', 'Geometrico', 'Blackwork', 'Tradicional', 'Acuarela', 'Realismo'];
+
+const portfolioItems = [
+  { id: 1, src: '/images/sloth-tattoo-artwork-04.png', category: 'Minimalista' },
+  { id: 2, src: '/images/sloth-tattoo-artwork-05.png', category: 'Geometrico' },
+  { id: 3, src: '/images/sloth-tattoo-artwork-06.png', category: 'Blackwork' },
+  { id: 4, src: '/images/sloth-tattoo-artwork-07.png', category: 'Tradicional' },
+  { id: 5, src: '/images/sloth-tattoo-artwork-08.png', category: 'Acuarela' },
+  { id: 6, src: '/images/sloth-tattoo-artwork-09.png', category: 'Realismo' },
+  { id: 7, src: '/images/sloth-tattoo-artwork-10.png', category: 'Minimalista' },
+  { id: 8, src: '/images/sloth-tattoo-artwork-11.png', category: 'Geometrico' },
+];
+
+export default function Portfolio() {
+  const [activeFilter, setActiveFilter] = useState('Todos');
+
+  const visible =
+    activeFilter === 'Todos'
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeFilter);
+
+  return (
+    <section className="bg-ink-black w-full py-[128px]">
+      <div className="max-w-[1480px] mx-auto px-[100px]">
+        {/* Section header */}
+        <div className="mb-[60px]">
+          <p className="font-inter text-[16px] leading-6 text-neon-green mb-10">
+            Portfolio
+          </p>
+          <h2 className="font-poppins font-black text-[45px] text-[#fdfdfe] uppercase tracking-[3.15px] leading-none mb-5">
+            Nuestros trabajos
+          </h2>
+          <p className="font-inter text-[18px] leading-7 text-[#abb9d2]">
+            Cada pieza cuenta una historia única. Explora nuestra galería.
+          </p>
+        </div>
+
+        {/* Filter bar */}
+        <div className="flex flex-wrap gap-3 mb-[86px]">
+          {FILTERS.map((filter) => {
+            const isActive = activeFilter === filter;
+            return (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-[25px] py-[9px] text-[14px] font-inter leading-5 transition-colors duration-200 border ${
+                  isActive
+                    ? 'bg-neon-green border-neon-green text-black'
+                    : 'bg-transparent border-white/10 text-neon-green hover:border-neon-green/40'
+                }`}
+              >
+                {filter}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Image grid — 4 columns, square items */}
+        <div className="grid grid-cols-4 gap-4">
+          {visible.map((item) => (
+            <div
+              key={item.id}
+              className="aspect-square overflow-hidden"
+            >
+              <img
+                src={item.src}
+                alt={item.category}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
