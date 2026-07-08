@@ -102,6 +102,21 @@
 
 .home-contact__cta--filled {
   background-color: #24B3CD;
+  transition:
+    background-color 300ms ease-out,
+    box-shadow 300ms ease-out,
+    transform 300ms ease-out;
+}
+
+.home-contact__cta--filled:hover {
+  background-color: #1d9ab5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.home-contact__cta--filled:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 /* ── Responsive ───────────────────────────────────────────── */

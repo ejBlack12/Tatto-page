@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './home-gallery-style.css';
 
@@ -23,9 +24,20 @@ const slides = [
 
 function HomeGallery() {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
 
   const next = () => setCurrent((p) => (p + 1) % slides.length);
   const prev = () => setCurrent((p) => (p - 1 + slides.length) % slides.length);
+
+  // Navegar al portafolio con la categoría del item clickeado
+  const handleImageClick = (artStyle) => {
+    navigate(`/portfolio?category=${encodeURIComponent(artStyle)}`);
+  };
+
+  // Navegar al portafolio sin filtro (mostrar todos)
+  const handleVerTodas = () => {
+    navigate('/portfolio?category=Todos');
+  };
 
   return (
     <section className="home-gallery">
@@ -49,8 +61,13 @@ function HomeGallery() {
             {slides[current].map((item, idx) => (
               <div
                 key={item.id}
-                className="gallery-item"
+                className="gallery-item gallery-item--clickable"
                 style={{ animationDelay: `${idx * 0.08}s` }}
+                onClick={() => handleImageClick(item.artStyle)}
+                title={`Ver más trabajos de ${item.artStyle}`}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === 'Enter' && handleImageClick(item.artStyle)}
               >
                 <img
                   src={item.src}
@@ -87,7 +104,7 @@ function HomeGallery() {
           ))}
         </div>
 
-        <button type="button" className="home-gallery__cta reveal">
+        <button type="button" className="home-gallery__cta reveal" onClick={handleVerTodas}>
           VER TODAS LAS IMÁGENES
         </button>
       </div>

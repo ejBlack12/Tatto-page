@@ -2,15 +2,58 @@
 .home-hero {
   position: relative;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(45, 209, 192, 0.08), transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(31, 111, 118, 0.18), transparent 55%),
-    linear-gradient(135deg, #0F1620 0%, #1A2330 50%, #08111B 100%);
+  background: #09090b;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 24px 80px;
+  padding: 80px 24px 60px;
   overflow: hidden;
+}
+
+/* Mancha superior derecha — teal más brillante */
+.home-hero::before {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(20, 140, 145, 0.42) 0%, transparent 70%);
+  filter: blur(60px);
+  top: -5%;
+  right: 5%;
+  animation: blobDriftA 16s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Mancha inferior izquierda — teal más oscuro y sutil */
+.home-hero::after {
+  content: '';
+  position: absolute;
+  width: 440px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(15, 100, 108, 0.32) 0%, transparent 70%);
+  filter: blur(70px);
+  bottom: 0%;
+  left: -5%;
+  animation: blobDriftB 20s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes blobDriftA {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  33%  { transform: translate(-30px, 25px) scale(1.08); }
+  66%  { transform: translate(20px, -20px) scale(0.95); }
+  100% { transform: translate(-15px, 30px) scale(1.05); }
+}
+
+@keyframes blobDriftB {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  33%  { transform: translate(25px, -20px) scale(1.06); }
+  66%  { transform: translate(-20px, 15px) scale(0.92); }
+  100% { transform: translate(30px, -10px) scale(1.08); }
 }
 
 .home-hero__overlay {
@@ -26,12 +69,14 @@
   pointer-events: none;
   opacity: 0.65;
   animation: floatParticles 18s linear infinite;
+  z-index: 1;
 }
 
 @keyframes floatParticles {
   from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
   to   { background-position: 600px 600px, -600px 600px, 600px -600px, -600px -600px, 600px 600px; }
 }
+
 
 .home-hero__content {
   position: relative;
@@ -47,9 +92,9 @@
 .home-hero__title {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(60px, 12vw, 140px);
+  font-size: clamp(56px, 9vw, 118px);
   letter-spacing: 4px;
-  line-height: 0.95;
+  line-height: 0.92;
   color: var(--color-catskill);
   margin: 0;
   display: flex;
@@ -90,15 +135,23 @@
   padding: 16px 40px;
   border-radius: var(--radius-full);
   margin-top: 12px;
-  transition: transform var(--transition-base), box-shadow var(--transition-base),
-    background-color var(--transition-base);
   border: 2px solid transparent;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition:
+    background-color 350ms ease-out,
+    border-color 350ms ease-out,
+    box-shadow 350ms ease-out;
 }
 
 .home-hero__cta:hover {
-  transform: translateY(-3px) scale(1.04);
-  background-color: #1a9ab5;
-  box-shadow: 0 12px 30px rgba(36, 179, 205, 0.55);
+  background-color: #1d9ab5;
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.home-hero__cta:active {
+  background-color: #1585a0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .home-hero__scroll {

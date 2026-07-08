@@ -95,6 +95,17 @@
   transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Imágenes clickeables que navegan al portafolio */
+.gallery-item--clickable {
+  cursor: pointer;
+}
+
+.gallery-item--clickable:hover {
+  transform: scale(1.02);
+  outline: 2px solid rgba(36, 179, 205, 0.5);
+  outline-offset: -2px;
+}
+
 .gallery-item__img {
   position: absolute;
   inset: 0;
