@@ -20,22 +20,25 @@ function PortfolioPage() {
 
   const [activeFilter, setActiveFilter] = useState(getCategoryFromParams);
 
-  // Cuando la URL cambia (navegación desde carrusel), actualizar filtro y hacer scroll
+  // Cuando la URL trae ?category=X (navegación desde carrusel), actualizar filtro y hacer scroll
   useEffect(() => {
+    if (!searchParams.get('category')) return;
+
     const category = getCategoryFromParams();
     setActiveFilter(category);
 
     // Scroll automático hacia la sección de galería con offset del navbar fijo
     if (galleryRef.current) {
       setTimeout(() => {
-        const NAVBAR_HEIGHT = 80; // altura del navbar fijo
-        const elementTop =
-          galleryRef.current.getBoundingClientRect().top + window.pageYOffset;
+        const NAVBAR_HEIGHT = 80;
+        // offsetTop: posición absoluta desde el top del documento
+        // Más confiable que getBoundingClientRect en móviles (no depende del scroll actual)
+        const elementTop = galleryRef.current.offsetTop;
         window.scrollTo({
           top: elementTop - NAVBAR_HEIGHT,
           behavior: 'smooth',
         });
-      }, 200); // 200ms para que el DOM esté pintado en móviles
+      }, 500); // 500ms: da tiempo al layout móvil (columna única más larga) de terminar
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);

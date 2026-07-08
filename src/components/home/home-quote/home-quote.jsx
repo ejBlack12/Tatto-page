@@ -1,7 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import { FaQuoteLeft } from 'react-icons/fa';
 import './home-quote-style.css';
 
 function HomeQuote() {
+  const navigate = useNavigate();
+
+  const goToAbout = () => navigate('/about');
+
   return (
     <section className="home-quote">
       <div className="home-quote__bg" />
@@ -16,7 +21,7 @@ function HomeQuote() {
           No solo embellecen el cuerpo, sino también el alma.
         </p>
 
-        <button type="button" className="home-quote__cta">
+        <button type="button" className="home-quote__cta" onClick={goToAbout}>
           Mira Nuestra Historia
         </button>
       </div>
