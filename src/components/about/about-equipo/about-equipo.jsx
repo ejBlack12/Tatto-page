@@ -1,30 +1,43 @@
 import { FaInstagram } from 'react-icons/fa';
 import './about-equipo-style.css';
 
+function getInitials(name) {
+  return name
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join('')
+    .toUpperCase();
+}
+
 const team = [
   {
     id: 1,
-    name: 'Laura Méndez',
-    role: 'Tatuadora Principal',
-    specialty: 'Realismo & Blackwork',
-    image: 'https://images.unsplash.com/photo-1531746020798-e6ee3fb28c0f?w=400&h=420&fit=crop&face',
-    instagram: '#',
+    name: 'Eliecer Antonio Perez Hernandez',
+    role: 'Tatuador',
+    specialty: 'Realismo',
+    experience: '10 años de experiencia',
+    bio: null,
+    instagram: 'Eliecer Perez',
   },
   {
     id: 2,
-    name: 'Valeria Torres',
-    role: 'Artista Tatuadora',
-    specialty: 'Acuarela & Geométrico',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=420&fit=crop&face',
-    instagram: '#',
+    name: 'Anielka Perez',
+    role: 'Tatuadora',
+    specialty: 'Minimalista & Fine Line',
+    experience: '5 años de experiencia',
+    bio: null,
+    instagram: null,
   },
   {
     id: 3,
-    name: 'Diego Ramírez',
-    role: 'Artista Tatuador',
-    specialty: 'Tradicional & Neo-Tradicional',
-    image: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=420&fit=crop&face',
-    instagram: '#',
+    name: 'Fiorela Corrales',
+    role: 'Tatuadora',
+    specialty: 'Blackwork',
+    experience: '10 años de experiencia',
+    bio: null,
+    instagram: null,
   },
 ];
 
@@ -48,27 +61,21 @@ function AboutEquipo() {
               key={member.id}
               className={`team-card reveal reveal--zoom reveal-delay-${idx + 1}`}
             >
-              <div className="team-card__image-wrap">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="team-card__img"
-                  loading="lazy"
-                />
-                <div className="team-card__overlay">
-                  <a
-                    href={member.instagram}
-                    className="team-card__social"
-                    aria-label={`Instagram de ${member.name}`}
-                  >
-                    <FaInstagram />
-                  </a>
-                </div>
+              <div className="team-card__avatar-wrap">
+                <div className="team-card__avatar">{getInitials(member.name)}</div>
               </div>
               <div className="team-card__info">
                 <h3 className="team-card__name">{member.name}</h3>
                 <p className="team-card__role">{member.role}</p>
                 <p className="team-card__specialty">{member.specialty}</p>
+                <p className="team-card__experience">{member.experience}</p>
+                {member.bio && <p className="team-card__bio">{member.bio}</p>}
+                {member.instagram && (
+                  <span className="team-card__instagram">
+                    <FaInstagram />
+                    {member.instagram}
+                  </span>
+                )}
               </div>
             </article>
           ))}

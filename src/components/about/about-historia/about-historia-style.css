@@ -49,6 +49,25 @@
   margin-bottom: 0;
 }
 
+.about-historia__highlight {
+  color: var(--color-java);
+  font-weight: 500;
+}
+
+.about-historia__badge {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 8px 18px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--color-java);
+  background: rgba(45, 209, 192, 0.08);
+  border: 1px solid rgba(45, 209, 192, 0.25);
+  border-radius: var(--radius-full);
+}
+
 /* Image side */
 .about-historia__image-wrap {
   position: relative;

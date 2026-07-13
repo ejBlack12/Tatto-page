@@ -10,21 +10,23 @@ function AboutHistoria() {
           </h2>
           <div className="about-historia__divider" />
           <p className="about-historia__body">
-            En 2015, Sloth Tattoo abrió sus puertas como un sueño hecho realidad: ofrecer
-            arte permanente de calidad en un ambiente acogedor y profesional. Lo que comenzó
-            como un pequeño estudio se ha convertido en un referente del tatuaje artístico
-            en la ciudad.
+            Desde que era un niño el dibujo y el arte siempre me llamaron la atención.
+            Tuve mi primer acercamiento a una máquina de tatuar a los{' '}
+            <span className="about-historia__highlight">10 años</span>, y con el paso del
+            tiempo ese interés inicial se fue transformando en una verdadera pasión.
           </p>
           <p className="about-historia__body">
-            Nuestro nombre lo dice todo: la pereza del perezoso es en realidad sabiduría.
-            Nos tomamos el tiempo necesario para que cada tatuaje sea perfecto. No
-            apresuramos el arte. Cada línea, cada sombra, cada detalle cuenta.
+            Con el tiempo tomé la decisión de formarme de manera profesional, dedicando un
+            año completo a perfeccionar la técnica hasta culminar mis estudios en{' '}
+            <span className="about-historia__highlight">2017</span>. Ese fue el punto de
+            partida de todo lo que hoy es Sloth Tattoo.
           </p>
           <p className="about-historia__body">
             Hoy somos un equipo de artistas apasionados que compartimos un mismo propósito:
             transformar tus ideas en obras de arte permanentes que llevarás con orgullo
             toda la vida.
           </p>
+          <span className="about-historia__badge">Formación profesional · 2017</span>
         </div>
 
         <div className="about-historia__image-wrap reveal reveal--right">
