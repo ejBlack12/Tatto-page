@@ -5,17 +5,15 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgba(15, 22, 32, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: #000000;
   transition: background-color var(--transition-base), box-shadow var(--transition-base),
     padding var(--transition-base);
   padding: 18px 0;
 }
 
 .navbar--scrolled {
-  background-color: rgba(8, 17, 27, 0.95);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  background-color: #000000;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
   padding: 10px 0;
 }
 
@@ -46,17 +44,16 @@
   height: 64px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 4px 12px rgba(45, 209, 192, 0.25));
-  transition: height var(--transition-base), filter var(--transition-base);
+  transition: height var(--transition-base);
 }
 
 .navbar--scrolled .navbar__logo-img {
   height: 48px;
-  filter: drop-shadow(0 2px 8px rgba(45, 209, 192, 0.35));
 }
 
 .navbar__links {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 36px;
   margin: 0;
@@ -71,6 +68,8 @@
   color: var(--color-catskill);
   text-decoration: none;
   position: relative;
+  display: inline-block;
+  white-space: nowrap;
   transition: color var(--transition-base);
   padding: 6px 0;
 }

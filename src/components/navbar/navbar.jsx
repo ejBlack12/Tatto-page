@@ -27,8 +27,13 @@ function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" className={({ isActive }) => isActive ? 'navbar__link navbar__link--active' : 'navbar__link'}>
-              About us
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? 'navbar__link navbar__link--active' : 'navbar__link'
+              }
+            >
+              Sobre Nosotros
             </NavLink>
           </li>
           <li>
@@ -69,11 +74,21 @@ function Navbar() {
       </div>
 
       <div className={`navbar__mobile ${isOpen ? 'navbar__mobile--open' : ''}`}>
-        <NavLink to="/" onClick={closeMenu} className="navbar__mobile-link">Home</NavLink>
-        <NavLink to="/about" onClick={closeMenu} className="navbar__mobile-link">About us</NavLink>
-        <NavLink to="/services" onClick={closeMenu} className="navbar__mobile-link">Services</NavLink>
-        <NavLink to="/portfolio" onClick={closeMenu} className="navbar__mobile-link">Portfolio</NavLink>
-        <NavLink to="/contact" onClick={closeMenu} className="navbar__mobile-link">Contáctanos</NavLink>
+        <NavLink to="/" onClick={closeMenu} className="navbar__mobile-link">
+          Home
+        </NavLink>
+        <NavLink to="/about" onClick={closeMenu} className="navbar__mobile-link">
+          Sobre Nosotros
+        </NavLink>
+        <NavLink to="/services" onClick={closeMenu} className="navbar__mobile-link">
+          Services
+        </NavLink>
+        <NavLink to="/portfolio" onClick={closeMenu} className="navbar__mobile-link">
+          Portfolio
+        </NavLink>
+        <NavLink to="/contact" onClick={closeMenu} className="navbar__mobile-link">
+          Contáctanos
+        </NavLink>
         <div className="navbar__mobile-socials">
           <a href="#" aria-label="Facebook"><FaFacebookF /></a>
           <a href="#" aria-label="Instagram"><FaInstagram /></a>
