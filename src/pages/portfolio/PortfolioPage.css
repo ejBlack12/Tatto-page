@@ -19,6 +19,8 @@
 .portfolio-works {
   padding: 80px 20px;
   background: #0a0f1a;
+  /* Compensa el navbar fijo al hacer scroll automático */
+  scroll-margin-top: 80px;
 }
 
 /* HEADER DE SECCIONES */

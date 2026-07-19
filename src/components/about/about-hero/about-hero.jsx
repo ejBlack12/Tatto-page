@@ -7,7 +7,7 @@ function AboutHero() {
       <div className="about-hero__content">
         <p className="about-hero__eyebrow fade-in-up">Sloth Tattoo Studio</p>
         <h1 className="about-hero__title fade-in-up" style={{ animationDelay: '0.2s' }}>
-          About us
+          Sobre Nosotros
         </h1>
       </div>
     </section>

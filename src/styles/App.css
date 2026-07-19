@@ -7,4 +7,5 @@
 
 .app__main {
   flex: 1;
+  padding-top: 100px;
 }
