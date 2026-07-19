@@ -1,8 +1,47 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import './PortfolioPage.css';
 
 function PortfolioPage() {
-  const [activeFilter, setActiveFilter] = useState('Todos');
+  const [searchParams] = useSearchParams();
+  const galleryRef = useRef(null);
+
+  const filters = ['Todos', 'Minimalista', 'Geométrico', 'Blackwork', 'Tradicional', 'Acuarela', 'Realismo'];
+
+  // Leer ?category=X de la URL y normalizarlo contra los filtros existentes
+  const getCategoryFromParams = () => {
+    const param = searchParams.get('category');
+    if (!param) return 'Todos';
+    const match = filters.find(
+      (f) => f.toLowerCase() === param.toLowerCase()
+    );
+    return match || 'Todos';
+  };
+
+  const [activeFilter, setActiveFilter] = useState(getCategoryFromParams);
+
+  // Cuando la URL trae ?category=X (navegación desde carrusel), actualizar filtro y hacer scroll
+  useEffect(() => {
+    if (!searchParams.get('category')) return;
+
+    const category = getCategoryFromParams();
+    setActiveFilter(category);
+
+    // Scroll automático hacia la sección de galería con offset del navbar fijo
+    if (galleryRef.current) {
+      setTimeout(() => {
+        const NAVBAR_HEIGHT = 80;
+        // offsetTop: posición absoluta desde el top del documento
+        // Más confiable que getBoundingClientRect en móviles (no depende del scroll actual)
+        const elementTop = galleryRef.current.offsetTop;
+        window.scrollTo({
+          top: elementTop - NAVBAR_HEIGHT,
+          behavior: 'smooth',
+        });
+      }, 500); // 500ms: da tiempo al layout móvil (columna única más larga) de terminar
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const techniques = [
     {
@@ -27,8 +66,6 @@ function PortfolioPage() {
     },
   ];
 
-  const filters = ['Todos', 'Minimalista', 'Geométrico', 'Blackwork', 'Tradicional', 'Acuarela', 'Realismo'];
-
   const portfolioItems = [
     { id: 1, category: 'Minimalista', image: 'https://images.unsplash.com/photo-1600723173208-8eee0a1e5c83?w=300&h=300&fit=crop' },
     { id: 2, category: 'Geométrico', image: 'https://images.unsplash.com/photo-1598212624191-9c79f6b93a81?w=300&h=300&fit=crop' },
@@ -40,9 +77,9 @@ function PortfolioPage() {
     { id: 8, category: 'Blackwork', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=300&h=300&fit=crop' },
   ];
 
-  const filteredItems = activeFilter === 'Todos' 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === activeFilter);
+  const filteredItems = activeFilter === 'Todos'
+    ? portfolioItems
+    : portfolioItems.filter((item) => item.category === activeFilter);
 
   return (
     <div className="portfolio-page">
@@ -71,8 +108,8 @@ function PortfolioPage() {
         </div>
       </section>
 
-      {/* NUESTROS TRABAJOS */}
-      <section className="portfolio-works">
+      {/* NUESTROS TRABAJOS — id para scroll automático */}
+      <section id="portfolio-gallery" className="portfolio-works" ref={galleryRef}>
         <div className="portfolio-container">
           <div className="portfolio-section-header">
             <p className="portfolio-label">Portafolio</p>

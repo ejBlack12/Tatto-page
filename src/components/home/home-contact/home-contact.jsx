@@ -1,6 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import './home-contact-style.css';
 
 function HomeContact() {
+  const navigate = useNavigate();
+
+  const goToContact = () => navigate('/contact');
+
   return (
     <section className="home-contact">
       {/* Bloque claro: Solicita Más Información */}
@@ -16,7 +21,11 @@ function HomeContact() {
           <br />
           Contáctanos para una consulta gratuita.
         </p>
-        <button type="button" className="home-contact__cta reveal reveal-delay-3">
+        <button
+          type="button"
+          className="home-contact__cta reveal reveal-delay-3"
+          onClick={goToContact}
+        >
           Contáctanos
         </button>
       </div>
@@ -36,6 +45,7 @@ function HomeContact() {
         <button
           type="button"
           className="home-contact__cta home-contact__cta--filled reveal reveal-delay-3"
+          onClick={goToContact}
         >
           Contact Us
         </button>

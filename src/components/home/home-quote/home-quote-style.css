@@ -47,12 +47,12 @@
   max-width: 940px;
 }
 
-/* Comillas decorativas cyan */
+/* Comillas decorativas verdes */
 .home-quote__marks {
   font-size: 48px;
-  color: var(--color-java);
+  color: #75DA5C;
   opacity: 0.9;
-  filter: drop-shadow(0 4px 16px rgba(45, 209, 192, 0.45));
+  filter: drop-shadow(0 4px 16px rgba(117, 218, 92, 0.45));
 }
 
 /* Texto principal */
