@@ -48,9 +48,14 @@
 
 /* Grid */
 .about-equipo__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 32px;
+}
+
+.about-equipo__grid .team-card {
+  width: 100%;
+  max-width: 320px;
 }
 
 /* Team card */
@@ -80,24 +85,16 @@
   );
 }
 
-.team-card__avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.team-card__photo {
   width: 96px;
   height: 96px;
   border-radius: 50%;
   border: 2px solid rgba(45, 209, 192, 0.35);
-  background: var(--color-bg-dark);
-  font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: var(--color-java);
+  object-fit: cover;
   transition: transform var(--transition-slow);
 }
 
-.team-card:hover .team-card__avatar {
+.team-card:hover .team-card__photo {
   transform: scale(1.06);
 }
 
@@ -164,19 +161,7 @@
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .about-equipo__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 560px) {
-  .about-equipo__grid {
-    grid-template-columns: 1fr;
-    max-width: 360px;
-    margin: 0 auto;
-  }
-
   .about-equipo {
     padding: 64px 20px;
   }
