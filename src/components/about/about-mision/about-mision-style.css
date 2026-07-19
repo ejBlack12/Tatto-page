@@ -74,6 +74,30 @@
   margin: 0;
 }
 
+.mision-card__scope {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.mision-card__scope-item {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--color-java);
+}
+
+.mision-card__scope-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: rgba(45, 209, 192, 0.4);
+  flex-shrink: 0;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 768px) {
   .about-banner {

@@ -55,6 +55,7 @@
 /* Links (izquierda) */
 .navbar__links {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 36px;
   margin: 0;
@@ -69,6 +70,8 @@
   color: var(--color-catskill);
   text-decoration: none;
   position: relative;
+  display: inline-block;
+  white-space: nowrap;
   transition: color var(--transition-base);
   padding: 6px 0;
 }

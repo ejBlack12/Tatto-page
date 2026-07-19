@@ -24,9 +24,9 @@ function AboutMision() {
             </div>
             <h3 className="mision-card__title">MISIÓN</h3>
             <p className="mision-card__body">
-              Brindar experiencias de tatuaje únicas y personalizadas, combinando técnica
-              impecable con un ambiente seguro y acogedor. Nos comprometemos a hacer
-              realidad la visión de cada cliente con la más alta calidad artística.
+              Crecer constantemente en el arte del tatuaje, con el propósito de brindar el
+              mejor servicio a cada uno de nuestros clientes y garantizar la más alta
+              calidad en cada trabajo que realizamos.
             </p>
           </div>
 
@@ -36,10 +36,16 @@ function AboutMision() {
             </div>
             <h3 className="mision-card__title">VISIÓN</h3>
             <p className="mision-card__body">
-              Ser el estudio de tatuajes de referencia en la región, reconocido por la
-              excelencia artística, la innovación continua y el respeto profundo por el
-              arte del tatuaje como expresión cultural y personal.
+              Hacer renombre y consolidarnos como un referente del tatuaje, expandiendo
+              nuestro alcance más allá de la ciudad hasta dejar huella a nivel internacional.
             </p>
+            <div className="mision-card__scope">
+              <span className="mision-card__scope-item">Regional</span>
+              <span className="mision-card__scope-dot" />
+              <span className="mision-card__scope-item">Provincial</span>
+              <span className="mision-card__scope-dot" />
+              <span className="mision-card__scope-item">Internacional</span>
+            </div>
           </div>
         </div>
       </section>

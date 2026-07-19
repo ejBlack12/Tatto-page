@@ -39,7 +39,7 @@ function Navbar() {
                 isActive ? 'navbar__link navbar__link--active' : 'navbar__link'
               }
             >
-              About us
+              Sobre Nosotros
             </NavLink>
           </li>
           <li>
@@ -115,7 +115,7 @@ function Navbar() {
           Home
         </NavLink>
         <NavLink to="/about" onClick={closeMenu} className="navbar__mobile-link">
-          About us
+          Sobre Nosotros
         </NavLink>
         <NavLink to="/services" onClick={closeMenu} className="navbar__mobile-link">
           Services
