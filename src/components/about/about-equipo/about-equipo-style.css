@@ -160,6 +160,72 @@
   color: var(--color-java);
 }
 
+/* ── Featured card (único integrante) ────────────────────── */
+.about-equipo__grid .team-card:only-child {
+  max-width: 900px;
+}
+
+@media (min-width: 700px) {
+  .team-card:only-child {
+    flex-direction: row;
+  }
+
+  .team-card:only-child .team-card__avatar-wrap {
+    width: 42%;
+    flex-shrink: 0;
+    aspect-ratio: auto;
+  }
+
+  .team-card:only-child .team-card__photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
+
+  .team-card:only-child .team-card__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 56px;
+  }
+
+  .team-card:only-child .team-card__name {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .team-card:only-child .team-card__role {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .team-card:only-child .team-card__divider {
+    width: 48px;
+    height: 3px;
+    background: var(--color-java);
+    border-radius: 2px;
+    margin: 0 0 18px;
+  }
+
+  .team-card:only-child .team-card__specialty {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .team-card:only-child .team-card__experience {
+    font-size: 12px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+
+  .team-card:only-child .team-card__instagram {
+    font-size: 14px;
+  }
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 560px) {
   .about-equipo {

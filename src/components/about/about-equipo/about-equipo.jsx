@@ -44,6 +44,7 @@ function AboutEquipo() {
               <div className="team-card__info">
                 <h3 className="team-card__name">{member.name}</h3>
                 <p className="team-card__role">{member.role}</p>
+                <div className="team-card__divider" />
                 <p className="team-card__specialty">{member.specialty}</p>
                 <p className="team-card__experience">{member.experience}</p>
                 {member.bio && <p className="team-card__bio">{member.bio}</p>}
