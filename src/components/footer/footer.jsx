@@ -8,21 +8,12 @@ function Footer() {
 
       {/* Four-column grid — todo unificado en un solo footer */}
       <div className="footer__inner">
-
-        {/* Columna 1 — Brand + Sobre Sloth Tattoo */}
-        <div className="footer__col">
-          {/* Logo brand (dentro de la columna, encima del título) */}
+        <div className="footer__brand">
           <div className="footer__logo">
             <span className="footer__logo-tattoo">TATTOO</span>
             <span className="footer__logo-sloth">SLOTH INK</span>
           </div>
-
-          <h4 className="footer__col-title">Sobre Sloth Tattoo</h4>
-          <p className="footer__col-text">
-            Somos un estudio de tatuajes profesional en San José, Costa Rica,
-            dedicados al arte permanente con técnicas modernas y diseños únicos.
-            Cada pieza es una historia.
-          </p>
+          <p className="footer__tagline">Transformamos tus ideas en arte permanente.</p>
           <div className="footer__socials">
             <a href="#" aria-label="Facebook" className="footer__social"><FaFacebookF /></a>
             <a href="#" aria-label="Instagram" className="footer__social"><FaInstagram /></a>

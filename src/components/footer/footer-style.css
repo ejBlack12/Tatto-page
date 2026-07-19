@@ -2,7 +2,23 @@
 .footer {
   background-color: #0a0d12;
   color: var(--color-catskill);
-  border-top: 1px solid rgba(36, 179, 205, 0.15);
+  padding: 64px 32px 0;
+  border-top: 1px solid rgba(45, 209, 192, 0.12);
+}
+
+.footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 56px;
+  padding-bottom: 48px;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 /* ── Logo brand (dentro de la primera columna) ── */
@@ -89,10 +105,26 @@
 }
 
 .footer__social:hover {
-  background-color: #24B3CD;
-  color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(36, 179, 205, 0.4);
+  background-color: var(--color-java);
+  color: var(--color-bg-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(45, 209, 192, 0.45);
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-java);
+  margin: 0;
 }
 
 /* Lists */
