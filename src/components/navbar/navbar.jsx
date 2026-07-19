@@ -37,6 +37,11 @@ function Navbar() {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/portfolio" className={({ isActive }) => isActive ? 'navbar__link navbar__link--active' : 'navbar__link'}>
+              Portfolio
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/contact" className={({ isActive }) => isActive ? 'navbar__link navbar__link--active' : 'navbar__link'}>
               Contáctanos
             </NavLink>
@@ -67,6 +72,7 @@ function Navbar() {
         <NavLink to="/" onClick={closeMenu} className="navbar__mobile-link">Home</NavLink>
         <NavLink to="/about" onClick={closeMenu} className="navbar__mobile-link">About us</NavLink>
         <NavLink to="/services" onClick={closeMenu} className="navbar__mobile-link">Services</NavLink>
+        <NavLink to="/portfolio" onClick={closeMenu} className="navbar__mobile-link">Portfolio</NavLink>
         <NavLink to="/contact" onClick={closeMenu} className="navbar__mobile-link">Contáctanos</NavLink>
         <div className="navbar__mobile-socials">
           <a href="#" aria-label="Facebook"><FaFacebookF /></a>

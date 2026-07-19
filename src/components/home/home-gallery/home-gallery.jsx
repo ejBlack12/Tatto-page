@@ -1,0 +1,97 @@
+import { useState } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import './home-gallery-style.css';
+
+// Imagen placeholder mientras llegan las fotos reales del estudio.
+const PLACEHOLDER = '/images/tatuajes-realistas 1.png';
+
+// Cada slide agrupa 4 imágenes que se muestran al mismo tiempo.
+const slides = [
+  [
+    { id: 1, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 1' },
+    { id: 2, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 2' },
+    { id: 3, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 3' },
+    { id: 4, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 4' },
+  ],
+  [
+    { id: 5, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 5' },
+    { id: 6, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 6' },
+    { id: 7, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 7' },
+    { id: 8, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 8' },
+  ],
+];
+
+function HomeGallery() {
+  const [current, setCurrent] = useState(0);
+
+  const next = () => setCurrent((p) => (p + 1) % slides.length);
+  const prev = () => setCurrent((p) => (p - 1 + slides.length) % slides.length);
+
+  return (
+    <section className="home-gallery">
+      <div className="home-gallery__inner">
+        <h2 className="home-gallery__title reveal">
+          GALERÍA <span className="home-gallery__title-accent">DE TRABAJOS</span>
+        </h2>
+        <div className="home-gallery__divider reveal" />
+
+        <div className="home-gallery__slider reveal">
+          <button
+            type="button"
+            className="home-gallery__arrow home-gallery__arrow--left"
+            onClick={prev}
+            aria-label="Anterior"
+          >
+            <FaChevronLeft />
+          </button>
+
+          <div className="home-gallery__images">
+            {slides[current].map((item, idx) => (
+              <div
+                key={item.id}
+                className="gallery-item"
+                style={{ animationDelay: `${idx * 0.08}s` }}
+              >
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="gallery-item__img"
+                  loading="lazy"
+                />
+                <div className="gallery-item__overlay" />
+              </div>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="home-gallery__arrow home-gallery__arrow--right"
+            onClick={next}
+            aria-label="Siguiente"
+          >
+            <FaChevronRight />
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="home-gallery__dots">
+          {slides.map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              className={`home-gallery__dot ${idx === current ? 'home-gallery__dot--active' : ''}`}
+              onClick={() => setCurrent(idx)}
+              aria-label={`Ver slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+
+        <button type="button" className="home-gallery__cta reveal">
+          VER TODAS LAS IMÁGENES
+        </button>
+      </div>
+    </section>
+  );
+}
+
+export default HomeGallery;

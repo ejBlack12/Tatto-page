@@ -1,0 +1,47 @@
+import './home-contact-style.css';
+
+function HomeContact() {
+  return (
+    <section className="home-contact">
+      {/* Bloque claro: Solicita Más Información */}
+      <div className="home-contact__light">
+        <p className="home-contact__eyebrow reveal">
+          MEJORA TU ESTILO PARA UN FUTURO MEJOR
+        </p>
+        <h2 className="home-contact__title reveal reveal-delay-1">
+          Solicita Más Información
+        </h2>
+        <p className="home-contact__desc reveal reveal-delay-2">
+          Estamos aquí para ayudarte a hacer realidad tu próximo tatuaje.
+          <br />
+          Contáctanos para una consulta gratuita.
+        </p>
+        <button type="button" className="home-contact__cta reveal reveal-delay-3">
+          Contáctanos
+        </button>
+      </div>
+
+      {/* Bloque oscuro: Request More Information */}
+      <div className="home-contact__dark">
+        <p className="home-contact__eyebrow home-contact__eyebrow--dark reveal">
+          UPSKILL FOR A BETTER FUTURE
+        </p>
+        <h2 className="home-contact__title home-contact__title--dark reveal reveal-delay-1">
+          Request More Information
+        </h2>
+        <p className="home-contact__desc home-contact__desc--dark reveal reveal-delay-2">
+          Sloth Tattoo es un estudio profesional dedicado al arte permanente con
+          técnicas modernas y diseños únicos.
+        </p>
+        <button
+          type="button"
+          className="home-contact__cta home-contact__cta--filled reveal reveal-delay-3"
+        >
+          Contact Us
+        </button>
+      </div>
+    </section>
+  );
+}
+
+export default HomeContact;

@@ -1,0 +1,159 @@
+/* ── Home Services ────────────────────────────────────────── */
+.home-services {
+  background-color: var(--color-bg-section);
+  padding: 96px 32px;
+}
+
+.home-services__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-services__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 54px);
+  letter-spacing: 6px;
+  color: var(--color-bg-dark);
+  text-align: center;
+  margin: 0;
+}
+
+.home-services__title-accent {
+  color: var(--color-deep-sea);
+}
+
+.home-services__divider {
+  width: 90px;
+  height: 4px;
+  background-color: var(--color-java);
+  margin: 18px 0 56px;
+  border-radius: var(--radius-full);
+}
+
+.home-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+/* Tarjeta
+   Truco para suavizar la sombra: la card tiene una sombra "base" siempre
+   visible, y un ::before posicionado encima con la sombra "hover" cuya
+   opacidad se anima. Así el blur/spread no salta — solo se cruza una
+   sombra con la otra de forma fluida. */
+.service-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 32px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  border: 1px solid rgba(45, 209, 192, 0.15);
+  will-change: transform;
+}
+
+/* Sombra "elevada" que entra/sale por opacidad — nunca cambia su blur */
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 22px 40px rgba(31, 111, 118, 0.22);
+  opacity: 0;
+  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card__badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--color-java);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Combinamos sombra externa (visible en reposo) e interna (oculta)
+     en la misma declaración; al cambiar solo los alphas, la transición
+     interpola suavemente entre ambos estados sin saltos. */
+  box-shadow:
+    0 6px 14px rgba(45, 209, 192, 0.35),
+    inset 0 3px 6px rgba(0, 0, 0, 0),
+    inset 0 1px 2px rgba(0, 0, 0, 0);
+  transition:
+    box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* En hover de la card, el badge "se hunde": atenuamos la sombra externa
+   y activamos las internas, todo en una sola box-shadow para que la
+   interpolación sea continua. */
+.service-card:hover .service-card__badge {
+  box-shadow:
+    0 6px 14px rgba(45, 209, 192, 0),
+    inset 0 3px 6px rgba(0, 0, 0, 0.22),
+    inset 0 1px 2px rgba(0, 0, 0, 0.12);
+  transform: translateY(1px);
+}
+
+.service-card__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-bg-dark);
+  margin: 0;
+}
+
+.service-card__desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-dove-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .home-services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-services {
+    padding: 72px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-services__grid {
+    grid-template-columns: 1fr;
+  }
+  .home-services {
+    padding: 56px 16px;
+  }
+}
