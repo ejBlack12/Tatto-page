@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import './PortfolioPage.css';
 
 function PortfolioPage() {
   const [searchParams] = useSearchParams();
+  const { hash } = useLocation();
   const galleryRef = useRef(null);
 
   const filters = ['Todos', 'Minimalista', 'Geométrico', 'Blackwork', 'Tradicional', 'Acuarela', 'Realismo'];
@@ -42,6 +43,20 @@ function PortfolioPage() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
+
+  // Scroll automático hacia la galería cuando llegamos con #portfolio-gallery (p. ej. desde el carrusel del home)
+  useEffect(() => {
+    if (hash !== '#portfolio-gallery' || !galleryRef.current) return;
+
+    setTimeout(() => {
+      const NAVBAR_HEIGHT = 80;
+      const elementTop = galleryRef.current.offsetTop;
+      window.scrollTo({
+        top: elementTop - NAVBAR_HEIGHT,
+        behavior: 'smooth',
+      });
+    }, 500);
+  }, [hash]);
 
   const techniques = [
     {

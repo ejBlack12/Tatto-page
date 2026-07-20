@@ -3,22 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './home-gallery-style.css';
 
-// Imagen placeholder mientras llegan las fotos reales del estudio.
-const PLACEHOLDER = '/images/tatuajes-realistas 1.png';
-
-// Cada slide agrupa 4 imágenes que se muestran al mismo tiempo.
+// Cada slide agrupa 4 imágenes reales de trabajos del estudio.
 const slides = [
   [
-    { id: 1, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 1', artStyle: 'Realismo' },
-    { id: 2, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 2', artStyle: 'Tradicional' },
-    { id: 3, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 3', artStyle: 'Blackwork' },
-    { id: 4, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 4', artStyle: 'Cover-up' },
+    { id: 1, src: '/images/sloth-tattoo-artwork-01.png', alt: 'Trabajo de tatuaje 1' },
+    { id: 2, src: '/images/sloth-tattoo-artwork-02.png', alt: 'Trabajo de tatuaje 2' },
+    { id: 3, src: '/images/sloth-tattoo-artwork-03.png', alt: 'Trabajo de tatuaje 3' },
+    { id: 4, src: '/images/sloth-tattoo-artwork-09.png', alt: 'Trabajo de tatuaje 4' },
   ],
   [
-    { id: 5, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 5', artStyle: 'Fine line' },
-    { id: 6, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 6', artStyle: 'Realismo' },
-    { id: 7, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 7', artStyle: 'Blackwork' },
-    { id: 8, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 8', artStyle: 'Tradicional' },
+    { id: 5, src: '/images/sloth-tattoo-artwork-05.png', alt: 'Trabajo de tatuaje 5' },
+    { id: 6, src: '/images/sloth-tattoo-artwork-06.png', alt: 'Trabajo de tatuaje 6' },
+    { id: 7, src: '/images/sloth-tattoo-artwork-07.png', alt: 'Trabajo de tatuaje 7' },
+    { id: 8, src: '/images/sloth-tattoo-artwork-08.png', alt: 'Trabajo de tatuaje 8' },
   ],
 ];
 
@@ -29,14 +26,9 @@ function HomeGallery() {
   const next = () => setCurrent((p) => (p + 1) % slides.length);
   const prev = () => setCurrent((p) => (p - 1 + slides.length) % slides.length);
 
-  // Navegar al portafolio con la categoría del item clickeado
-  const handleImageClick = (artStyle) => {
-    navigate(`/portfolio?category=${encodeURIComponent(artStyle)}`);
-  };
-
-  // Navegar al portafolio sin filtro (mostrar todos)
-  const handleVerTodas = () => {
-    navigate('/portfolio?category=Todos');
+  // Navegar al portafolio completo (sin filtro) directo a la galería de trabajos
+  const goToPortfolio = () => {
+    navigate('/portfolio#portfolio-gallery');
   };
 
   return (
@@ -63,11 +55,10 @@ function HomeGallery() {
                 key={item.id}
                 className="gallery-item gallery-item--clickable"
                 style={{ animationDelay: `${idx * 0.08}s` }}
-                onClick={() => handleImageClick(item.artStyle)}
-                title={`Ver más trabajos de ${item.artStyle}`}
+                onClick={goToPortfolio}
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => e.key === 'Enter' && handleImageClick(item.artStyle)}
+                onKeyDown={(e) => e.key === 'Enter' && goToPortfolio()}
               >
                 <img
                   src={item.src}
@@ -76,7 +67,6 @@ function HomeGallery() {
                   loading="lazy"
                 />
                 <div className="gallery-item__overlay" />
-                <span className="gallery-item__style-label">{item.artStyle}</span>
               </div>
             ))}
           </div>
@@ -104,7 +94,7 @@ function HomeGallery() {
           ))}
         </div>
 
-        <button type="button" className="home-gallery__cta reveal" onClick={handleVerTodas}>
+        <button type="button" className="home-gallery__cta reveal" onClick={goToPortfolio}>
           VER TODAS LAS IMÁGENES
         </button>
       </div>
