@@ -1,0 +1,234 @@
+/* ── About Equipo ──────────────────────────────────────────── */
+.about-equipo {
+  background-color: var(--color-bg-darker);
+  padding: 96px 24px;
+}
+
+.about-equipo__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.about-equipo__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.about-equipo__title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--color-catskill);
+  margin: 0 0 20px;
+  line-height: 1;
+}
+
+.about-equipo__title-accent {
+  color: var(--color-java);
+}
+
+.about-equipo__divider {
+  width: 56px;
+  height: 3px;
+  background: var(--color-java);
+  margin: 0 auto 24px;
+  border-radius: 2px;
+}
+
+.about-equipo__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: var(--color-casper);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.about-equipo__grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.about-equipo__grid .team-card {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Team card */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-card-dark);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-card__avatar-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(
+    135deg,
+    rgba(45, 209, 192, 0.1) 0%,
+    rgba(45, 209, 192, 0.02) 100%
+  );
+}
+
+.team-card__photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid rgba(45, 209, 192, 0.35);
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.team-card:hover .team-card__photo {
+  transform: scale(1.06);
+}
+
+.team-card__info {
+  padding: 24px 24px 28px;
+}
+
+.team-card__name {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-catskill);
+  margin: 0 0 4px;
+}
+
+.team-card__role {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-java);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.team-card__specialty {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--color-casper);
+  margin: 0 0 10px;
+}
+
+.team-card__experience {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: var(--color-casper);
+  padding: 4px 10px;
+  border: 1px solid rgba(197, 197, 216, 0.2);
+  border-radius: var(--radius-full);
+  margin: 0 0 12px;
+}
+
+.team-card__bio {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--color-casper);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.team-card__instagram {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-java);
+}
+
+/* ── Featured card (único integrante) ────────────────────── */
+.about-equipo__grid .team-card:only-child {
+  max-width: 900px;
+}
+
+@media (min-width: 700px) {
+  .team-card:only-child {
+    flex-direction: row;
+  }
+
+  .team-card:only-child .team-card__avatar-wrap {
+    width: 42%;
+    flex-shrink: 0;
+    aspect-ratio: auto;
+  }
+
+  .team-card:only-child .team-card__photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
+
+  .team-card:only-child .team-card__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 56px;
+  }
+
+  .team-card:only-child .team-card__name {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .team-card:only-child .team-card__role {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .team-card:only-child .team-card__divider {
+    width: 48px;
+    height: 3px;
+    background: var(--color-java);
+    border-radius: 2px;
+    margin: 0 0 18px;
+  }
+
+  .team-card:only-child .team-card__specialty {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .team-card:only-child .team-card__experience {
+    font-size: 12px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+
+  .team-card:only-child .team-card__instagram {
+    font-size: 14px;
+  }
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .about-equipo {
+    padding: 64px 20px;
+  }
+}

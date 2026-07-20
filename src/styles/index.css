@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Rubik+Mono+One&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;900&family=Rubik+Mono+One&family=Staatliches&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -40,6 +40,7 @@
   --font-display: 'Staatliches', 'Rubik Mono One', sans-serif;
   --font-mono: 'Rubik Mono One', monospace;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
 
   /* Spacing */
   --spacing-xs: 0.25rem;

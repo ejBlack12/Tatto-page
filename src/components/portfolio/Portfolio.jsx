@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 
 const FILTERS = ['Todos', 'Minimalista', 'Geometrico', 'Blackwork', 'Tradicional', 'Acuarela', 'Realismo'];
 
@@ -13,8 +13,13 @@ const portfolioItems = [
   { id: 8, src: '/images/sloth-tattoo-artwork-11.png', category: 'Geometrico' },
 ];
 
-export default function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState('Todos');
+// initialFilter permite llegar pre-filtrado desde ?category=X (ver home-gallery)
+const Portfolio = forwardRef(function Portfolio({ initialFilter = 'Todos' }, ref) {
+  const [activeFilter, setActiveFilter] = useState(initialFilter);
+
+  useEffect(() => {
+    setActiveFilter(initialFilter);
+  }, [initialFilter]);
 
   const visible =
     activeFilter === 'Todos'
@@ -22,7 +27,7 @@ export default function Portfolio() {
       : portfolioItems.filter((item) => item.category === activeFilter);
 
   return (
-    <section className="bg-ink-black w-full py-[128px]">
+    <section id="portfolio-gallery" ref={ref} className="bg-ink-black w-full py-[128px]">
       <div className="max-w-[1480px] mx-auto px-[100px]">
         {/* Section header */}
         <div className="mb-[60px]">
@@ -75,4 +80,6 @@ export default function Portfolio() {
       </div>
     </section>
   );
-}
+});
+
+export default Portfolio;
