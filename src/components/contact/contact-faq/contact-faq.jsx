@@ -54,8 +54,8 @@ function ContactFaq() {
     <section className="contact-faq">
       <div className="contact-faq__image-col">
         <img
-          src="/images/tatuajes-realistas 1.png"
-          alt="Artista de tatuajes Sloth Ink"
+          src="/images/sloth-tattoo-detail-06.png"
+          alt="Tatuaje realista de calavera con ángel y rosa"
           className="contact-faq__img"
         />
       </div>
@@ -68,8 +68,9 @@ function ContactFaq() {
 
         <div className="contact-faq__list">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="faq-item reveal">
+            <div key={faq.q} className="faq-item reveal">
               <button
+                type="button"
                 className={`faq-item__btn ${openIndex === idx ? 'faq-item__btn--open' : ''}`}
                 onClick={() => toggle(idx)}
                 aria-expanded={openIndex === idx}
