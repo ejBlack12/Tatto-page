@@ -48,6 +48,7 @@ const Portfolio = forwardRef(function Portfolio({ initialFilter = 'Todos' }, ref
             const isActive = activeFilter === filter;
             return (
               <button
+                type="button"
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
                 className={`px-[25px] py-[9px] text-[14px] font-inter leading-5 transition-colors duration-200 border ${
