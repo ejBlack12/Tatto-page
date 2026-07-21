@@ -98,9 +98,9 @@ function HomeGallery() {
 
         {/* Dots */}
         <div className="home-gallery__dots">
-          {slides.map((_, idx) => (
+          {slides.map((slide, idx) => (
             <button
-              key={idx}
+              key={slide[0].id}
               type="button"
               className={`home-gallery__dot ${idx === current ? 'home-gallery__dot--active' : ''}`}
               onClick={() => setCurrent(idx)}
