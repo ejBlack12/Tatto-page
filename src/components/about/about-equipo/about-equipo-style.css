@@ -154,10 +154,18 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  width: fit-content;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 400;
   color: var(--color-java);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.team-card__instagram:hover {
+  color: #46e3d2;
+  text-decoration: underline;
 }
 
 /* ── Featured card (único integrante) ────────────────────── */
