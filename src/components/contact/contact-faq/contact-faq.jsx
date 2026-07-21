@@ -54,15 +54,14 @@ function ContactFaq() {
     <section className="contact-faq">
       <div className="contact-faq__image-col">
         <img
-          src="/images/sloth-tattoo-detail-06.png"
-          alt="Tatuaje realista de calavera con ángel y rosa"
+          src="/images/sloth-tattoo-artwork-03.png"
+          alt="Tatuaje de Kakashi estilo anime realizado por Eliecer"
           className="contact-faq__img"
         />
       </div>
 
       <div className="contact-faq__content-col">
-        <p className="contact-faq__eyebrow reveal">Preguntas frecuentes</p>
-        <h2 className="contact-faq__title reveal reveal-delay-1">
+        <h2 className="contact-faq__title reveal">
           Preguntas y respuestas frecuentes
         </h2>
 
