@@ -68,7 +68,7 @@ function Navbar() {
           <a href="#" aria-label="TikTok" className="navbar__social"><FaTiktok /></a>
         </div>
 
-        <button className="navbar__toggle" aria-label="Abrir menú" onClick={() => setIsOpen((p) => !p)}>
+        <button type="button" className="navbar__toggle" aria-label="Abrir menú" onClick={() => setIsOpen((p) => !p)}>
           {isOpen ? <IoClose /> : <HiMenuAlt3 />}
         </button>
       </div>

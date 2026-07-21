@@ -79,6 +79,7 @@ function ContactInfo() {
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
+          sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
         />
       </div>
     </section>

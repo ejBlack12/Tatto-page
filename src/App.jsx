@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { MotionConfig } from 'motion/react';
 import './styles/App.css';
 import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
@@ -11,20 +12,22 @@ import PortfolioPage from './pages/portfolio/PortfolioPage';
 
 function App() {
   return (
-    <div className="app">
-      <ScrollToTop />
-      <Navbar />
-      <main className="app__main">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<OurServicesPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <MotionConfig reducedMotion="user">
+      <div className="app">
+        <ScrollToTop />
+        <Navbar />
+        <main className="app__main">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<OurServicesPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </MotionConfig>
   );
 }
 
