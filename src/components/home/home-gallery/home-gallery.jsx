@@ -67,7 +67,12 @@ function HomeGallery() {
                 title={`Ver más trabajos de ${item.artStyle}`}
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => e.key === 'Enter' && handleImageClick(item.artStyle)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleImageClick(item.artStyle);
+                  }
+                }}
               >
                 <img
                   src={item.src}
