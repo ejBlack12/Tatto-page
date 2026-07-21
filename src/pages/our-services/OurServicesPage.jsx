@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { motion } from 'motion/react';
+import { LazyMotion, domAnimation, m } from 'motion/react';
 import { Link } from 'react-router-dom';
 import './our-services-style.css';
 
@@ -20,7 +20,7 @@ const svgPaths = {
 /* ── Feature card ── */
 function FeatureCard({ icon, title, description, delay }) {
   return (
-    <motion.div
+    <m.div
       className="os-feature-card"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ function FeatureCard({ icon, title, description, delay }) {
       <div className="os-feature-card__icon">{icon}</div>
       <p className="os-feature-card__title">{title}</p>
       <p className="os-feature-card__desc">{description}</p>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -39,7 +39,7 @@ function FeatureCard({ icon, title, description, delay }) {
 function About() {
   return (
     <section className="os-about">
-      <motion.div
+      <m.div
         className="os-about__text"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +54,7 @@ function About() {
           creatividad se fusiona con la técnica más refinada para garantizar la mejor calidad en cada
           trabajo.
         </p>
-      </motion.div>
+      </m.div>
 
       <div className="os-about__cards">
         <FeatureCard
@@ -125,7 +125,7 @@ function VideoPlayer({ videoSrc, posterSrc, playButtonDark = false }) {
       </video>
 
       {!playing && (
-        <motion.button
+        <m.button
           className="os-video__play"
           aria-label="Reproducir video"
           onClick={handlePlay}
@@ -134,19 +134,19 @@ function VideoPlayer({ videoSrc, posterSrc, playButtonDark = false }) {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
-          <motion.div
+          <m.div
             className={`os-video__play-circle ${playButtonDark ? 'os-video__play-circle--dark' : ''}`}
             animate={{ scale: hovered ? 1.1 : 1 }}
             transition={{ type: 'spring', stiffness: 300 }}
           />
-          <motion.span
+          <m.span
             className={`os-video__play-icon ${playButtonDark ? 'os-video__play-icon--dark' : ''}`}
             animate={{ x: hovered ? 4 : 0 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
             ▶
-          </motion.span>
-        </motion.button>
+          </m.span>
+        </m.button>
       )}
     </div>
   );
@@ -155,9 +155,9 @@ function VideoPlayer({ videoSrc, posterSrc, playButtonDark = false }) {
 /* ── Contact button ── */
 function ContactBtn() {
   return (
-    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+    <m.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
       <Link to="/contact" className="os-contact-btn">Contáctenos</Link>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -174,14 +174,14 @@ function Feature({ text }) {
 /* ── Service section: image on the LEFT ── */
 function ServiceLeft({ title, subtitle, description, features, imageSrc, videoSrc, gradient = false }) {
   return (
-    <motion.section
+    <m.section
       className={`os-service ${gradient ? 'os-service--gradient' : 'os-service--solid'}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <motion.div
+      <m.div
         className="os-service__media"
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -189,9 +189,9 @@ function ServiceLeft({ title, subtitle, description, features, imageSrc, videoSr
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <VideoPlayer videoSrc={videoSrc} posterSrc={imageSrc} playButtonDark />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         className="os-service__content"
         initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -205,22 +205,22 @@ function ServiceLeft({ title, subtitle, description, features, imageSrc, videoSr
           {features.map((f) => <Feature key={f} text={f} />)}
         </ul>
         <ContactBtn />
-      </motion.div>
-    </motion.section>
+      </m.div>
+    </m.section>
   );
 }
 
 /* ── Service section: image on the RIGHT ── */
 function ServiceRight({ title, subtitle, description, features, imageSrc, videoSrc }) {
   return (
-    <motion.section
+    <m.section
       className="os-service os-service--solid"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <motion.div
+      <m.div
         className="os-service__content"
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -234,9 +234,9 @@ function ServiceRight({ title, subtitle, description, features, imageSrc, videoS
           {features.map((f) => <Feature key={f} text={f} />)}
         </ul>
         <ContactBtn />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         className="os-service__media"
         initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -244,44 +244,46 @@ function ServiceRight({ title, subtitle, description, features, imageSrc, videoS
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <VideoPlayer videoSrc={videoSrc} posterSrc={imageSrc} />
-      </motion.div>
-    </motion.section>
+      </m.div>
+    </m.section>
   );
 }
 
 /* ── Main page ── */
 export default function OurServicesPage() {
   return (
-    <div className="our-services-page">
-      <About />
+    <LazyMotion features={domAnimation}>
+      <div className="our-services-page">
+        <About />
 
-      <ServiceLeft
-        subtitle="Tatuaje Artístico"
-        title="Realismo & Detalle"
-        description="Dominio absoluto de la técnica realista: retratos, naturaleza, fauna y todo lo que imagines llevado a la piel con una precisión que asombra. Cada sesión comienza con una consulta sin costo para entender tu visión."
-        features={['Consulta de diseño gratuita', 'Tinta de grado médico', 'Ambiente 100 % estéril']}
-        imageSrc="/images/sloth-tattoo-artwork-01.png"
-        videoSrc="/Videos/sloth-tattoo-video-01.mp4"
-      />
+        <ServiceLeft
+          subtitle="Tatuaje Artístico"
+          title="Realismo & Detalle"
+          description="Dominio absoluto de la técnica realista: retratos, naturaleza, fauna y todo lo que imagines llevado a la piel con una precisión que asombra. Cada sesión comienza con una consulta sin costo para entender tu visión."
+          features={['Consulta de diseño gratuita', 'Tinta de grado médico', 'Ambiente 100 % estéril']}
+          imageSrc="/images/sloth-tattoo-artwork-01.png"
+          videoSrc="/Videos/sloth-tattoo-video-01.mp4"
+        />
 
-      <ServiceRight
-        subtitle="Estilo Exclusivo"
-        title="Línea Fina & Minimalismo"
-        description="La elegancia del trazo mínimo. Creamos diseños sutiles, geométricos o botánicos con agujas de precisión que garantizan líneas perfectas y una cicatrización impecable."
-        features={['Trazo de ultra-precisión', 'Diseño personalizado al 100 %', 'Seguimiento post-tattoo']}
-        imageSrc="/images/sloth-tattoo-artwork-04.png"
-        videoSrc="/Videos/sloth-tattoo-video-02.mp4"
-      />
+        <ServiceRight
+          subtitle="Estilo Exclusivo"
+          title="Línea Fina & Minimalismo"
+          description="La elegancia del trazo mínimo. Creamos diseños sutiles, geométricos o botánicos con agujas de precisión que garantizan líneas perfectas y una cicatrización impecable."
+          features={['Trazo de ultra-precisión', 'Diseño personalizado al 100 %', 'Seguimiento post-tattoo']}
+          imageSrc="/images/sloth-tattoo-artwork-04.png"
+          videoSrc="/Videos/sloth-tattoo-video-02.mp4"
+        />
 
-      <ServiceLeft
-        subtitle="Arte Oscuro"
-        title="Blackwork & Blackout"
-        description="Grandes áreas de tinta sólida o intrincados patrones geométricos que crean un impacto visual inmediato. Técnica avanzada con pigmentos de la más alta densidad para resultados duraderos y definidos."
-        features={['Pigmento de alta densidad', 'Técnica de cobertura avanzada', 'Arte atemporal']}
-        imageSrc="/images/sloth-tattoo-artwork-07.png"
-        videoSrc="/Videos/sloth-tattoo-video-03.mp4"
-        gradient
-      />
-    </div>
+        <ServiceLeft
+          subtitle="Arte Oscuro"
+          title="Blackwork & Blackout"
+          description="Grandes áreas de tinta sólida o intrincados patrones geométricos que crean un impacto visual inmediato. Técnica avanzada con pigmentos de la más alta densidad para resultados duraderos y definidos."
+          features={['Pigmento de alta densidad', 'Técnica de cobertura avanzada', 'Arte atemporal']}
+          imageSrc="/images/sloth-tattoo-artwork-07.png"
+          videoSrc="/Videos/sloth-tattoo-video-03.mp4"
+          gradient
+        />
+      </div>
+    </LazyMotion>
   );
 }
