@@ -24,30 +24,9 @@ function HomeContact() {
         <button
           type="button"
           className="home-contact__cta reveal reveal-delay-3"
-          onClick={goToContact}
+          onClick={() => navigate('/contact#contact-info')}
         >
           Contáctanos
-        </button>
-      </div>
-
-      {/* Bloque oscuro: Request More Information */}
-      <div className="home-contact__dark">
-        <p className="home-contact__eyebrow home-contact__eyebrow--dark reveal">
-          UPSKILL FOR A BETTER FUTURE
-        </p>
-        <h2 className="home-contact__title home-contact__title--dark reveal reveal-delay-1">
-          Request More Information
-        </h2>
-        <p className="home-contact__desc home-contact__desc--dark reveal reveal-delay-2">
-          Sloth Tattoo es un estudio profesional dedicado al arte permanente con
-          técnicas modernas y diseños únicos.
-        </p>
-        <button
-          type="button"
-          className="home-contact__cta home-contact__cta--filled reveal reveal-delay-3"
-          onClick={goToContact}
-        >
-          Contact Us
         </button>
       </div>
     </section>

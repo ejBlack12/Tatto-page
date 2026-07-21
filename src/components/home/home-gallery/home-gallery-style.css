@@ -133,31 +133,6 @@
   opacity: 1;
 }
 
-/* Art style label — appears on hover at the bottom of the image */
-.gallery-item__style-label {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 400ms cubic-bezier(0.22, 1, 0.36, 1), transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-  z-index: 2;
-}
-
-.gallery-item:hover .gallery-item__style-label {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Dots */
 .home-gallery__dots {
   display: flex;

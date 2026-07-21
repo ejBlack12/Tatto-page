@@ -8,6 +8,7 @@ const FILTERS = ['Todos', 'Minimalista', 'Geometrico', 'Blackwork', 'Tradicional
 
 function PortfolioPage() {
   const [searchParams] = useSearchParams();
+  const { hash } = useLocation();
   const galleryRef = useRef(null);
 
   // Leer ?category=X de la URL y normalizarlo contra los filtros existentes
