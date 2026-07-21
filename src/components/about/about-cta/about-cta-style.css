@@ -3,7 +3,7 @@
   position: relative;
   background:
     linear-gradient(to bottom, rgba(8, 17, 27, 0.82) 0%, rgba(8, 17, 27, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1574391166629-51fa65a93b47?w=1400&h=500&fit=crop') center / cover no-repeat;
+    url('/images/sloth-tattoo-artwork-04.png') center / cover no-repeat;
   padding: 100px 24px;
   text-align: center;
   overflow: hidden;

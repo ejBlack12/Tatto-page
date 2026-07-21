@@ -7,7 +7,7 @@ function AboutMision() {
       {/* Banner full-width entre Historia y Misión */}
       <div className="about-banner">
         <img
-          src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=1600&h=480&fit=crop"
+          src="/images/sloth-tattoo-artwork-03.png"
           alt="Artista tatuando en Sloth Tattoo"
           className="about-banner__img"
           loading="lazy"

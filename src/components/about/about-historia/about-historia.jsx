@@ -31,7 +31,7 @@ function AboutHistoria() {
 
         <div className="about-historia__image-wrap reveal reveal--right">
           <img
-            src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=700&h=580&fit=crop"
+            src="/images/sloth-tattoo-artwork-02.png"
             alt="Sesión de tatuaje en Sloth Tattoo"
             className="about-historia__img"
             loading="lazy"

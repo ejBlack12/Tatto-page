@@ -4,7 +4,7 @@
   min-height: 38vh;
   background:
     linear-gradient(to bottom, rgba(8, 17, 27, 0.75) 0%, rgba(15, 22, 32, 0.6) 100%),
-    url('https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=1600&h=600&fit=crop') center / cover no-repeat;
+    url('/images/sloth-tattoo-artwork-01.png') center / cover no-repeat;
   display: flex;
   align-items: flex-end;
   padding: 120px 24px 56px;

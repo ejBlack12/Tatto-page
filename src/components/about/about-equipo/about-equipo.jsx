@@ -10,6 +10,8 @@ const team = [
     experience: '10 años de experiencia',
     bio: null,
     instagram: 'Eliecer Perez',
+    instagramUrl:
+      'https://www.instagram.com/eliecer_perez2433?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
     photo: '/images/Eliecer peres.jfif',
   },
 ];
@@ -49,10 +51,15 @@ function AboutEquipo() {
                 <p className="team-card__experience">{member.experience}</p>
                 {member.bio && <p className="team-card__bio">{member.bio}</p>}
                 {member.instagram && (
-                  <span className="team-card__instagram">
+                  <a
+                    href={member.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="team-card__instagram"
+                  >
                     <FaInstagram />
                     {member.instagram}
-                  </span>
+                  </a>
                 )}
               </div>
             </article>
