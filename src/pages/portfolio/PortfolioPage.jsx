@@ -21,16 +21,18 @@ function PortfolioPage() {
   // Cuando la URL trae ?category=X (navegación desde carrusel), hacer scroll a la galería
   useEffect(() => {
     if (!searchParams.get('category')) return;
-    if (galleryRef.current) {
-      setTimeout(() => {
-        const NAVBAR_HEIGHT = 80;
-        const elementTop = galleryRef.current.offsetTop;
-        window.scrollTo({
-          top: elementTop - NAVBAR_HEIGHT,
-          behavior: 'smooth',
-        });
-      }, 500);
-    }
+    if (!galleryRef.current) return;
+
+    const id = setTimeout(() => {
+      const NAVBAR_HEIGHT = 80;
+      const elementTop = galleryRef.current.offsetTop;
+      window.scrollTo({
+        top: elementTop - NAVBAR_HEIGHT,
+        behavior: 'smooth',
+      });
+    }, 500);
+
+    return () => clearTimeout(id);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
