@@ -39,23 +39,23 @@ const Portfolio = forwardRef(function Portfolio({ initialFilter = 'Todos' }, ref
       : portfolioItems.filter((item) => item.category === activeFilter);
 
   return (
-    <section id="portfolio-gallery" ref={ref} className="bg-ink-black w-full py-[128px]">
-      <div className="max-w-[1480px] mx-auto px-[100px]">
+    <section id="portfolio-gallery" ref={ref} className="bg-ink-black w-full py-16 sm:py-20 lg:py-32">
+      <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[100px]">
         {/* Section header */}
-        <div className="mb-[60px]">
-          <p className="font-inter text-[16px] leading-6 text-neon-green mb-10">
+        <div className="mb-10 sm:mb-14 lg:mb-[60px]">
+          <p className="font-inter text-[14px] sm:text-[16px] leading-6 text-neon-green mb-6 sm:mb-10">
             Portfolio
           </p>
-          <h2 className="font-poppins font-black text-[45px] text-[#fdfdfe] uppercase tracking-[3.15px] leading-none mb-5">
+          <h2 className="font-poppins font-black text-[28px] sm:text-[36px] lg:text-[45px] text-[#fdfdfe] uppercase tracking-[3.15px] leading-none mb-4 sm:mb-5">
             Nuestros trabajos
           </h2>
-          <p className="font-inter text-[18px] leading-7 text-[#abb9d2]">
+          <p className="font-inter text-[15px] sm:text-[16px] lg:text-[18px] leading-7 text-[#abb9d2]">
             Cada pieza cuenta una historia única. Explora nuestra galería.
           </p>
         </div>
 
         {/* Filter bar */}
-        <div className="flex flex-wrap gap-3 mb-[86px]">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-14 lg:mb-[86px]">
           {FILTERS.map((filter) => {
             const isActive = activeFilter === filter;
             return (
@@ -63,7 +63,7 @@ const Portfolio = forwardRef(function Portfolio({ initialFilter = 'Todos' }, ref
                 type="button"
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-[25px] py-[9px] text-[14px] font-inter leading-5 transition-colors duration-200 border ${
+                className={`px-4 py-2 sm:px-[25px] sm:py-[9px] text-[13px] sm:text-[14px] font-inter leading-5 transition-colors duration-200 border ${
                   isActive
                     ? 'bg-neon-green border-neon-green text-black'
                     : 'bg-transparent border-white/10 text-neon-green hover:border-neon-green/40'
@@ -75,8 +75,8 @@ const Portfolio = forwardRef(function Portfolio({ initialFilter = 'Todos' }, ref
           })}
         </div>
 
-        {/* Image grid — 4 columns, square items */}
-        <div className="grid grid-cols-4 gap-4">
+        {/* Image grid — responsive columns, square items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
           {visible.map((item) => (
             <div
               key={item.id}
