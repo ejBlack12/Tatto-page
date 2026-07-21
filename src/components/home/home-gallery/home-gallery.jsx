@@ -26,9 +26,14 @@ function HomeGallery() {
   const next = () => setCurrent((p) => (p + 1) % slides.length);
   const prev = () => setCurrent((p) => (p - 1 + slides.length) % slides.length);
 
-  // Navegar al portafolio completo (sin filtro) directo a la galería de trabajos
-  const goToPortfolio = () => {
-    navigate('/portfolio#portfolio-gallery');
+    // Navegar al portafolio con la categoría del item clickeado
+  const handleImageClick = (artStyle) => {
+    navigate(`/portfolio?category=${encodeURIComponent(artStyle)}`);
+  };
+
+  // Navegar al portafolio sin filtro (mostrar todos)
+  const handleVerTodas = () => {
+    navigate('/portfolio?category=Todos');
   };
 
   return (
@@ -55,7 +60,8 @@ function HomeGallery() {
                 key={item.id}
                 className="gallery-item gallery-item--clickable"
                 style={{ animationDelay: `${idx * 0.08}s` }}
-                onClick={goToPortfolio}
+                onClick={() => handleImageClick(item.artStyle)}
+                title={`Ver más trabajos de ${item.artStyle}`}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
@@ -72,6 +78,7 @@ function HomeGallery() {
                   loading="lazy"
                 />
                 <div className="gallery-item__overlay" />
+                <span className="gallery-item__style-label">{item.artStyle}</span>
               </div>
             ))}
           </div>
@@ -99,7 +106,7 @@ function HomeGallery() {
           ))}
         </div>
 
-        <button type="button" className="home-gallery__cta reveal" onClick={goToPortfolio}>
+        <button type="button" className="home-gallery__cta reveal" onClick={handleVerTodas}>
           VER TODAS LAS IMÁGENES
         </button>
       </div>
