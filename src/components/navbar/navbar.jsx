@@ -69,7 +69,6 @@ function Navbar() {
           <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="navbar__social"><FaFacebookF /></a>
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="navbar__social"><FaInstagram /></a>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="navbar__social"><FaWhatsapp /></a>
-          <a href="#" aria-label="TikTok" className="navbar__social"><FaTiktok /></a>
         </div>
 
         <button type="button" className="navbar__toggle" aria-label="Abrir menú" onClick={() => setIsOpen((p) => !p)}>
@@ -79,16 +78,16 @@ function Navbar() {
 
       <div className={`navbar__mobile ${isOpen ? 'navbar__mobile--open' : ''}`}>
         <NavLink to="/" onClick={closeMenu} className="navbar__mobile-link">
-          Home
+          Principal
         </NavLink>
         <NavLink to="/about" onClick={closeMenu} className="navbar__mobile-link">
           Sobre Nosotros
         </NavLink>
         <NavLink to="/services" onClick={closeMenu} className="navbar__mobile-link">
-          Services
+          Servicios
         </NavLink>
         <NavLink to="/portfolio" onClick={closeMenu} className="navbar__mobile-link">
-          Portfolio
+          Portafolio
         </NavLink>
         <NavLink to="/contact" onClick={closeMenu} className="navbar__mobile-link">
           Contáctanos
@@ -97,7 +96,6 @@ function Navbar() {
           <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF /></a>
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
-          <a href="#" aria-label="TikTok"><FaTiktok /></a>
         </div>
       </div>
     </nav>
