@@ -156,7 +156,7 @@ function VideoPlayer({ videoSrc, posterSrc, playButtonDark = false }) {
 function ContactBtn() {
   return (
     <m.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-      <Link to="/contact" className="os-contact-btn">Contáctenos</Link>
+      <Link to="/contact#contact-info" className="os-contact-btn">Contáctenos</Link>
     </m.div>
   );
 }
