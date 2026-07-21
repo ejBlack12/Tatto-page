@@ -47,7 +47,7 @@ function Navbar() {
           </li>
           <li>
             <NavLink to="/portfolio" className={({ isActive }) => isActive ? 'navbar__link navbar__link--active' : 'navbar__link'}>
-              Portfolio
+              Portafolio
             </NavLink>
           </li>
           <li>
