@@ -1,8 +1,9 @@
+// Nombres alineados con los valores de FILTERS en Portfolio.jsx/PortfolioPage.jsx
 const techniques = [
-  { name: 'Minimalista', image: '/images/sloth-tattoo-artwork-00.png' },
-  { name: 'Geométrico', image: '/images/sloth-tattoo-artwork-01.png' },
-  { name: 'Blackwork', image: '/images/sloth-tattoo-artwork-02.png' },
-  { name: 'Tradicional', image: '/images/sloth-tattoo-artwork-03.png' },
+  { name: 'Acuarela', image: '/images/sloth-tattoo-detail-08.png' },
+  { name: 'Geometrico', image: '/images/sloth-tattoo-detail-15.png' },
+  { name: 'Blackwork', image: '/images/sloth-tattoo-detail-07.png' },
+  { name: 'Tradicional', image: '/images/sloth-tattoo-detail-01.png' },
 ];
 
 function TechniqueCard({ name, image }) {

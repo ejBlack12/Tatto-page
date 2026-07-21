@@ -3,22 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './home-gallery-style.css';
 
-// Imagen placeholder mientras llegan las fotos reales del estudio.
-const PLACEHOLDER = '/images/tatuajes-realistas 1.png';
-
-// Cada slide agrupa 4 imágenes que se muestran al mismo tiempo.
+// artStyle debe coincidir con los valores de FILTERS en Portfolio.jsx para que el enlace por categoría funcione.
 const slides = [
   [
-    { id: 1, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 1', artStyle: 'Realismo' },
-    { id: 2, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 2', artStyle: 'Tradicional' },
-    { id: 3, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 3', artStyle: 'Blackwork' },
-    { id: 4, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 4', artStyle: 'Cover-up' },
+    { id: 1, src: '/images/sloth-tattoo-artwork-00.png', alt: 'Tatuaje realista de Buda en antebrazo', artStyle: 'Realismo' },
+    { id: 2, src: '/images/sloth-tattoo-detail-01.png', alt: 'Tatuaje tradicional de búho y calavera', artStyle: 'Tradicional' },
+    { id: 3, src: '/images/sloth-tattoo-artwork-09.png', alt: 'Tatuaje blackwork de mariposa', artStyle: 'Blackwork' },
+    { id: 4, src: '/images/sloth-tattoo-detail-15.png', alt: 'Tatuaje geométrico flor de la vida en pierna', artStyle: 'Geometrico' },
   ],
   [
-    { id: 5, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 5', artStyle: 'Fine line' },
-    { id: 6, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 6', artStyle: 'Realismo' },
-    { id: 7, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 7', artStyle: 'Blackwork' },
-    { id: 8, src: PLACEHOLDER, alt: 'Trabajo de tatuaje 8', artStyle: 'Tradicional' },
+    { id: 5, src: '/images/sloth-tattoo-artwork-12.png', alt: 'Tatuaje minimalista de flores en espalda', artStyle: 'Minimalista' },
+    { id: 6, src: '/images/sloth-tattoo-artwork-07.png', alt: 'Tatuaje realista de retrato con tocado de tigre', artStyle: 'Realismo' },
+    { id: 7, src: '/images/sloth-tattoo-detail-07.png', alt: 'Tatuaje blackwork de oso y rostro nativo', artStyle: 'Blackwork' },
+    { id: 8, src: '/images/sloth-tattoo-artwork-08.png', alt: 'Tatuaje acuarela de estrellas', artStyle: 'Acuarela' },
   ],
 ];
 

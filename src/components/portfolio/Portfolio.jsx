@@ -2,15 +2,27 @@ import { forwardRef, useEffect, useState } from 'react';
 
 const FILTERS = ['Todos', 'Minimalista', 'Geometrico', 'Blackwork', 'Tradicional', 'Acuarela', 'Realismo'];
 
+// Categorías asignadas revisando el contenido visual real de cada foto
 const portfolioItems = [
-  { id: 1, src: '/images/sloth-tattoo-artwork-04.png', category: 'Minimalista' },
-  { id: 2, src: '/images/sloth-tattoo-artwork-05.png', category: 'Geometrico' },
-  { id: 3, src: '/images/sloth-tattoo-artwork-06.png', category: 'Blackwork' },
-  { id: 4, src: '/images/sloth-tattoo-artwork-07.png', category: 'Tradicional' },
-  { id: 5, src: '/images/sloth-tattoo-artwork-08.png', category: 'Acuarela' },
-  { id: 6, src: '/images/sloth-tattoo-artwork-09.png', category: 'Realismo' },
-  { id: 7, src: '/images/sloth-tattoo-artwork-10.png', category: 'Minimalista' },
-  { id: 8, src: '/images/sloth-tattoo-artwork-11.png', category: 'Geometrico' },
+  { id: 1, src: '/images/sloth-tattoo-artwork-00.png', category: 'Realismo' },
+  { id: 2, src: '/images/sloth-tattoo-artwork-02.png', category: 'Realismo' },
+  { id: 3, src: '/images/sloth-tattoo-artwork-07.png', category: 'Realismo' },
+  { id: 4, src: '/images/sloth-tattoo-detail-06.png', category: 'Realismo' },
+  { id: 5, src: '/images/sloth-tattoo-detail-10.png', category: 'Realismo' },
+  { id: 6, src: '/images/sloth-tattoo-artwork-01.png', category: 'Acuarela' },
+  { id: 7, src: '/images/sloth-tattoo-artwork-08.png', category: 'Acuarela' },
+  { id: 8, src: '/images/sloth-tattoo-detail-04.png', category: 'Acuarela' },
+  { id: 9, src: '/images/sloth-tattoo-detail-08.png', category: 'Acuarela' },
+  { id: 10, src: '/images/sloth-tattoo-detail-14.png', category: 'Acuarela' },
+  { id: 11, src: '/images/sloth-tattoo-detail-01.png', category: 'Tradicional' },
+  { id: 12, src: '/images/sloth-tattoo-detail-09.png', category: 'Tradicional' },
+  { id: 13, src: '/images/sloth-tattoo-artwork-05.png', category: 'Geometrico' },
+  { id: 14, src: '/images/sloth-tattoo-detail-15.png', category: 'Geometrico' },
+  { id: 15, src: '/images/sloth-tattoo-artwork-09.png', category: 'Blackwork' },
+  { id: 16, src: '/images/sloth-tattoo-artwork-11.png', category: 'Blackwork' },
+  { id: 17, src: '/images/sloth-tattoo-detail-07.png', category: 'Blackwork' },
+  { id: 18, src: '/images/sloth-tattoo-artwork-10.png', category: 'Minimalista' },
+  { id: 19, src: '/images/sloth-tattoo-artwork-12.png', category: 'Minimalista' },
 ];
 
 // initialFilter permite llegar pre-filtrado desde ?category=X (ver home-gallery)
