@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import "./home-contact-style.css";
 
 function HomeContact() {

@@ -6,7 +6,7 @@ import {
 	FaTimes,
 	FaWhatsapp,
 } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router";
 import "./navbar-style.css";
 
 const FACEBOOK_URL =

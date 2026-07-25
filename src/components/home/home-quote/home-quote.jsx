@@ -1,5 +1,5 @@
 import { FaQuoteLeft } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import "./home-quote-style.css";
 
 function HomeQuote() {

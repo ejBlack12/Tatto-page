@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 import Portfolio from "../../components/portfolio/Portfolio";
 import Techniques from "../../components/portfolio/Techniques";
 import "./PortfolioPage.css";

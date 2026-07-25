@@ -1,5 +1,5 @@
 import { MotionConfig } from "motion/react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router";
 import "./styles/App.css";
 import Footer from "./components/footer/footer";
 import Navbar from "./components/navbar/navbar";

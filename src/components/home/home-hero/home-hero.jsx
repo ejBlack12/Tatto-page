@@ -1,5 +1,5 @@
 import { FaChevronDown } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import "./home-hero-style.css";
 
 function HomeHero() {

@@ -7,7 +7,7 @@ import {
 	FaPhone,
 	FaWhatsapp,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import "./footer-style.css";
 
 const WHATSAPP_URL =

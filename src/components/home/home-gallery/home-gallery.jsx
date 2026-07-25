@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import "./home-gallery-style.css";
 
 // artStyle debe coincidir con los valores de FILTERS en Portfolio.jsx para que el enlace por categoría funcione.

@@ -1,6 +1,6 @@
 import { domAnimation, LazyMotion, m } from "motion/react";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import "./our-services-style.css";
 
 /* ── SVG icon paths (social & feature icons) ── */

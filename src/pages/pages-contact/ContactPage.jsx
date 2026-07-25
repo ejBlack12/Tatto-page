@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 import ContactFaq from "../../components/contact/contact-faq/contact-faq";
 import ContactInfo from "../../components/contact/contact-info/contact-info";
 import useScrollReveal from "../../hooks/useScrollReveal";
