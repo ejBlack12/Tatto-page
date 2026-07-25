@@ -113,11 +113,14 @@ const Portfolio = forwardRef(function Portfolio(
 				{/* Image grid — responsive columns, square items */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
 					{visible.map((item) => (
-						<div key={item.id} className="aspect-square overflow-hidden">
+						<div
+							key={item.id}
+							className="aspect-square overflow-hidden ring-1 ring-transparent hover:ring-neon-green/60 transition-shadow duration-300"
+						>
 							<img
 								src={item.src}
 								alt={item.category}
-								className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+								className="w-full h-full object-cover brightness-90 hover:brightness-100 transition-[filter] duration-300"
 							/>
 						</div>
 					))}
