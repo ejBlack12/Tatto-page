@@ -355,7 +355,7 @@ export default function OurServicesPage() {
 						"Tinta de grado médico",
 						"Ambiente 100 % estéril",
 					]}
-					imageSrc="/images/sloth-tattoo-artwork-02.png"
+					imageSrc="/images/sloth-tattoo-video-02-poster.jpg"
 					videoSrc="/Videos/sloth-tattoo-video-02.mp4"
 				/>
 
@@ -368,7 +368,7 @@ export default function OurServicesPage() {
 						"Técnica de degradado y salpicado",
 						"Diseño artístico 100 % personalizado",
 					]}
-					imageSrc="/images/sloth-tattoo-artwork-01.png"
+					imageSrc="/images/sloth-tattoo-video-05-poster.jpg"
 					videoSrc="/Videos/sloth-tattoo-video-05.mp4"
 				/>
 
@@ -381,7 +381,7 @@ export default function OurServicesPage() {
 						"Técnica de cobertura avanzada",
 						"Arte atemporal",
 					]}
-					imageSrc="/images/sloth-tattoo-artwork-09.png"
+					imageSrc="/images/sloth-tattoo-video-01-poster.jpg"
 					videoSrc="/Videos/sloth-tattoo-video-01.mp4"
 					gradient
 				/>
