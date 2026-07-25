@@ -29,11 +29,14 @@ function FeatureCard({ icon, title, description, delay }) {
 	return (
 		<m.div
 			className="os-feature-card"
-			initial={{ opacity: 0, y: 50 }}
-			whileInView={{ opacity: 1, y: 0 }}
+			initial={{ opacity: 0, transform: "translateY(50px) scale(1)" }}
+			whileInView={{ opacity: 1, transform: "translateY(0px) scale(1)" }}
 			viewport={{ once: true, margin: "-100px" }}
 			transition={{ delay, duration: 0.5 }}
-			whileHover={{ scale: 1.05, borderColor: "#2DD1C0" }}
+			whileHover={{
+				transform: "translateY(0px) scale(1.05)",
+				borderColor: "#2DD1C0",
+			}}
 		>
 			<div className="os-feature-card__icon">{icon}</div>
 			<p className="os-feature-card__title">{title}</p>
@@ -48,8 +51,8 @@ function About() {
 		<section className="os-about">
 			<m.div
 				className="os-about__text"
-				initial={{ opacity: 0, x: -100 }}
-				whileInView={{ opacity: 1, x: 0 }}
+				initial={{ opacity: 0, transform: "translateX(-100px)" }}
+				whileInView={{ opacity: 1, transform: "translateX(0px)" }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.8 }}
 			>
@@ -205,12 +208,14 @@ function VideoPlayer({ videoSrc, posterSrc, playButtonDark = false }) {
 				>
 					<m.div
 						className={`os-video__play-circle ${playButtonDark ? "os-video__play-circle--dark" : ""}`}
-						animate={{ scale: hovered ? 1.1 : 1 }}
+						animate={{ transform: hovered ? "scale(1.1)" : "scale(1)" }}
 						transition={{ type: "spring", stiffness: 300 }}
 					/>
 					<m.span
 						className={`os-video__play-icon ${playButtonDark ? "os-video__play-icon--dark" : ""}`}
-						animate={{ x: hovered ? 4 : 0 }}
+						animate={{
+							transform: hovered ? "translateX(4px)" : "translateX(0px)",
+						}}
 						transition={{ type: "spring", stiffness: 300 }}
 					>
 						▶
@@ -262,8 +267,8 @@ function ServiceLeft({
 		>
 			<m.div
 				className="os-service__media"
-				initial={{ x: -100, opacity: 0 }}
-				whileInView={{ x: 0, opacity: 1 }}
+				initial={{ opacity: 0, transform: "translateX(-100px)" }}
+				whileInView={{ opacity: 1, transform: "translateX(0px)" }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.8, delay: 0.2 }}
 			>
@@ -272,8 +277,8 @@ function ServiceLeft({
 
 			<m.div
 				className="os-service__content"
-				initial={{ x: 100, opacity: 0 }}
-				whileInView={{ x: 0, opacity: 1 }}
+				initial={{ opacity: 0, transform: "translateX(100px)" }}
+				whileInView={{ opacity: 1, transform: "translateX(0px)" }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.8, delay: 0.2 }}
 			>
@@ -310,8 +315,8 @@ function ServiceRight({
 		>
 			<m.div
 				className="os-service__content"
-				initial={{ x: -100, opacity: 0 }}
-				whileInView={{ x: 0, opacity: 1 }}
+				initial={{ opacity: 0, transform: "translateX(-100px)" }}
+				whileInView={{ opacity: 1, transform: "translateX(0px)" }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.8, delay: 0.2 }}
 			>
@@ -328,8 +333,8 @@ function ServiceRight({
 
 			<m.div
 				className="os-service__media"
-				initial={{ x: 100, opacity: 0 }}
-				whileInView={{ x: 0, opacity: 1 }}
+				initial={{ opacity: 0, transform: "translateX(100px)" }}
+				whileInView={{ opacity: 1, transform: "translateX(0px)" }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.8, delay: 0.2 }}
 			>
