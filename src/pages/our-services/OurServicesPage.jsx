@@ -32,10 +32,11 @@ function FeatureCard({ icon, title, description, delay }) {
 			initial={{ opacity: 0, transform: "translateY(50px) scale(1)" }}
 			whileInView={{ opacity: 1, transform: "translateY(0px) scale(1)" }}
 			viewport={{ once: true, margin: "-100px" }}
-			transition={{ delay, duration: 0.5 }}
+			transition={{ delay, duration: 0.35 }}
 			whileHover={{
 				transform: "translateY(0px) scale(1.05)",
 				borderColor: "#2DD1C0",
+				transition: { duration: 0.2, delay: 0 },
 			}}
 		>
 			<div className="os-feature-card__icon">{icon}</div>
@@ -69,7 +70,7 @@ function About() {
 
 			<div className="os-about__cards">
 				<FeatureCard
-					delay={0.2}
+					delay={0.1}
 					icon={
 						<svg
 							fill="none"
@@ -91,7 +92,7 @@ function About() {
 					description="Cada diseño es una obra de arte única creada con dedicación"
 				/>
 				<FeatureCard
-					delay={0.4}
+					delay={0.1}
 					icon={
 						<svg
 							fill="none"
@@ -120,7 +121,7 @@ function About() {
 					description="Más de 10 años perfeccionando nuestro arte y técnica"
 				/>
 				<FeatureCard
-					delay={0.6}
+					delay={0.1}
 					icon={
 						<svg
 							fill="none"
