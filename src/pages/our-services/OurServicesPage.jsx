@@ -355,21 +355,21 @@ export default function OurServicesPage() {
 						"Tinta de grado médico",
 						"Ambiente 100 % estéril",
 					]}
-					imageSrc="/images/sloth-tattoo-artwork-01.png"
-					videoSrc="/Videos/sloth-tattoo-video-01.mp4"
+					imageSrc="/images/sloth-tattoo-artwork-02.png"
+					videoSrc="/Videos/sloth-tattoo-video-02.mp4"
 				/>
 
 				<ServiceRight
 					subtitle="Estilo Exclusivo"
-					title="Línea Fina & Minimalismo"
-					description="La elegancia del trazo mínimo. Creamos diseños sutiles, geométricos o botánicos con agujas de precisión que garantizan líneas perfectas y una cicatrización impecable."
+					title="Acuarela"
+					description="El color se funde con la piel. Técnica de acuarela que combina pinceladas suaves, degradados y salpicaduras de color para un resultado artístico y único, sin los bordes marcados del tatuaje tradicional."
 					features={[
-						"Trazo de ultra-precisión",
-						"Diseño personalizado al 100 %",
-						"Seguimiento post-tattoo",
+						"Pigmentos vibrantes de larga duración",
+						"Técnica de degradado y salpicado",
+						"Diseño artístico 100 % personalizado",
 					]}
-					imageSrc="/images/sloth-tattoo-artwork-04.png"
-					videoSrc="/Videos/sloth-tattoo-video-02.mp4"
+					imageSrc="/images/sloth-tattoo-artwork-01.png"
+					videoSrc="/Videos/sloth-tattoo-video-05.mp4"
 				/>
 
 				<ServiceLeft
@@ -381,8 +381,8 @@ export default function OurServicesPage() {
 						"Técnica de cobertura avanzada",
 						"Arte atemporal",
 					]}
-					imageSrc="/images/sloth-tattoo-artwork-07.png"
-					videoSrc="/Videos/sloth-tattoo-video-03.mp4"
+					imageSrc="/images/sloth-tattoo-artwork-09.png"
+					videoSrc="/Videos/sloth-tattoo-video-01.mp4"
 					gradient
 				/>
 			</div>
