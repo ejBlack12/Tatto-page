@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok, FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok, FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock } from 'react-icons/fa';
 import './footer-style.css';
+
+const WHATSAPP_URL =
+  'https://wa.me/50661571777?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita';
 
 function Footer() {
   return (
@@ -15,10 +18,10 @@ function Footer() {
           </div>
           <p className="footer__tagline">Transformamos tus ideas en arte permanente.</p>
           <div className="footer__socials">
-            <a href="#" aria-label="Facebook" className="footer__social"><FaFacebookF /></a>
-            <a href="#" aria-label="Instagram" className="footer__social"><FaInstagram /></a>
-            <a href="#" aria-label="Twitter" className="footer__social"><FaTwitter /></a>
-            <a href="#" aria-label="TikTok" className="footer__social"><FaTiktok /></a>
+            <a href="https://www.facebook.com/p/Sloth-Ink-Tattoo-Studio-100057197209777/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="footer__social"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/eliecer_perez2433?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="footer__social"><FaInstagram /></a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="footer__social"><FaWhatsapp /></a>
+  
           </div>
         </div>
 
@@ -26,7 +29,7 @@ function Footer() {
         <div className="footer__col">
           <h4 className="footer__col-title">Enlaces Útiles</h4>
           <ul className="footer__list">
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">Principal</Link></li>
             <li><Link to="/about">Sobre Nosotros</Link></li>
             <li><Link to="/services">Servicios</Link></li>
             <li><Link to="/portfolio">Portafolio</Link></li>
@@ -38,9 +41,7 @@ function Footer() {
         <div className="footer__col">
           <h4 className="footer__col-title">Horario de Trabajo</h4>
           <ul className="footer__list footer__list--schedule">
-            <li><FaClock className="footer__list-icon" /><span>Lun – Vie: 10:00 – 19:00</span></li>
-            <li><FaClock className="footer__list-icon" /><span>Sábado: 10:00 – 17:00</span></li>
-            <li><FaClock className="footer__list-icon" /><span>Domingo: Cerrado</span></li>
+            <li><FaClock className="footer__list-icon" /><span>Lunes a sábado · 9 am – 8 pm</span></li>
           </ul>
         </div>
 
@@ -48,9 +49,9 @@ function Footer() {
         <div className="footer__col">
           <h4 className="footer__col-title">Información de Contacto</h4>
           <ul className="footer__list footer__list--contact">
-            <li><FaMapMarkerAlt className="footer__list-icon" /><span>San José, Costa Rica</span></li>
-            <li><FaEnvelope className="footer__list-icon" /><span>info@slothtattoo.cr</span></li>
-            <li><FaPhone className="footer__list-icon" /><span>+506 0000-0000</span></li>
+            <li><FaMapMarkerAlt className="footer__list-icon" /><span>En el cruce de los Chiles de Aguas Zarcas, costado norte del Super Todo #2</span></li>
+            <li><FaEnvelope className="footer__list-icon" /><span>eliecerperez2433@gmail.com</span></li>
+            <li><FaPhone className="footer__list-icon" /><span>+506 6157 1777 / +506 8608 4424</span></li>
           </ul>
         </div>
 

@@ -11,7 +11,6 @@ export default function useScrollReveal(options = {}) {
   useEffect(() => {
     const root = containerRef.current ?? document;
     const elements = root.querySelectorAll('.reveal');
-    if (!elements.length) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -30,7 +29,10 @@ export default function useScrollReveal(options = {}) {
 
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+    };
   }, [options.threshold, options.rootMargin]);
 
   return containerRef;

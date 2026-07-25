@@ -7,7 +7,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Sloth Tattoo color palette
         'deep-sea': '#1a4d5c',
         'java': '#1dd4bf',
         'casper': '#c5c5d8',
@@ -17,11 +16,17 @@ export default {
         'ebony-clay': '#2a2a2a',
         'emperor': '#555555',
         'half-baked': '#82d4d4',
+        'neon-green': '#75da5c',
+        'ink-black': '#0b0b0b',
+        'ink-dark': '#1e1e1e',
+        'cyan-cta': '#24b3cd',
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
         'rubik-mono': ['Rubik Mono One', 'monospace'],
         'stattiches': ['Stattiches', 'serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+        'abhaya': ['Abhaya Libre', 'serif'],
       },
       screens: {
         'xs': '320px',

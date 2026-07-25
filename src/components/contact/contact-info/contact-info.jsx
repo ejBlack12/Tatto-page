@@ -32,7 +32,7 @@ const MAP_SRC =
 
 function ContactInfo() {
   return (
-    <section className="contact-info">
+    <section className="contact-info" id="contact-info">
       {/* Left: text content */}
       <div className="contact-info__content">
         <p className="contact-info__eyebrow reveal">Ubicación</p>
@@ -79,6 +79,7 @@ function ContactInfo() {
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
+          sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
         />
       </div>
     </section>

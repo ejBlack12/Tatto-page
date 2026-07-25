@@ -132,7 +132,6 @@
 .gallery-item:hover .gallery-item__overlay {
   opacity: 1;
 }
-
 /* Art style label — appears on hover at the bottom of the image */
 .gallery-item__style-label {
   position: absolute;
@@ -157,7 +156,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
 /* Dots */
 .home-gallery__dots {
   display: flex;

@@ -1,7 +1,10 @@
 import { FaChevronDown } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import './home-hero-style.css';
 
 function HomeHero() {
+  const navigate = useNavigate();
+
   return (
     <section className="home-hero">
       <div className="home-hero__overlay" />
@@ -24,8 +27,9 @@ function HomeHero() {
           type="button"
           className="home-hero__cta fade-in-up pulse-glow"
           style={{ animationDelay: '0.7s' }}
+          onClick={() => navigate('/contact#contact-info')}
         >
-          Reserva tu Cita
+          Contáctanos
         </button>
 
         <a href="#servicios" className="home-hero__scroll" aria-label="Scroll abajo">
