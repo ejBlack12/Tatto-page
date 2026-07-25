@@ -117,8 +117,8 @@ function Footer() {
 			<div className="footer__bottom">
 				<p>© {new Date().getFullYear()} Sloth Tattoo. All rights reserved.</p>
 				<div className="footer__bottom-links">
-					<a href="#">Términos de servicio</a>
-					<a href="#">Privacidad</a>
+					<span>Términos de servicio</span>
+					<span>Privacidad</span>
 				</div>
 			</div>
 		</footer>
