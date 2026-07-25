@@ -171,7 +171,6 @@ function About() {
 /* ── Video player with animated play button ── */
 function VideoPlayer({ videoSrc, posterSrc, playButtonDark = false }) {
 	const [playing, setPlaying] = useState(false);
-	const [hovered, setHovered] = useState(false);
 	const videoRef = useRef(null);
 
 	const handlePlay = () => {
@@ -198,30 +197,21 @@ function VideoPlayer({ videoSrc, posterSrc, playButtonDark = false }) {
 			</video>
 
 			{!playing && (
-				<m.button
+				<button
+					type="button"
 					className="os-video__play"
 					aria-label="Reproducir video"
 					onClick={handlePlay}
-					onHoverStart={() => setHovered(true)}
-					onHoverEnd={() => setHovered(false)}
-					whileHover={{ scale: 1.1 }}
-					whileTap={{ scale: 0.95 }}
 				>
-					<m.div
+					<div
 						className={`os-video__play-circle ${playButtonDark ? "os-video__play-circle--dark" : ""}`}
-						animate={{ transform: hovered ? "scale(1.1)" : "scale(1)" }}
-						transition={{ type: "spring", stiffness: 300 }}
 					/>
-					<m.span
+					<span
 						className={`os-video__play-icon ${playButtonDark ? "os-video__play-icon--dark" : ""}`}
-						animate={{
-							transform: hovered ? "translateX(4px)" : "translateX(0px)",
-						}}
-						transition={{ type: "spring", stiffness: 300 }}
 					>
 						▶
-					</m.span>
-				</m.button>
+					</span>
+				</button>
 			)}
 		</div>
 	);
@@ -230,11 +220,9 @@ function VideoPlayer({ videoSrc, posterSrc, playButtonDark = false }) {
 /* ── Contact button ── */
 function ContactBtn() {
 	return (
-		<m.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-			<Link to="/contact#contact-info" className="os-contact-btn">
-				Contáctenos
-			</Link>
-		</m.div>
+		<Link to="/contact#contact-info" className="os-contact-btn">
+			Contáctenos
+		</Link>
 	);
 }
 
