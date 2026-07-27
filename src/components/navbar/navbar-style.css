@@ -238,6 +238,12 @@
 	}
 }
 
+@media (min-width: 861px) {
+	.navbar__mobile {
+		display: none;
+	}
+}
+
 @media (max-width: 480px) {
 	.navbar__mobile {
 		width: 100%;

@@ -26,6 +26,14 @@ function Navbar() {
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
 
+	useEffect(() => {
+		const onResize = () => {
+			if (window.innerWidth > 860) setIsOpen(false);
+		};
+		window.addEventListener("resize", onResize);
+		return () => window.removeEventListener("resize", onResize);
+	}, []);
+
 	const closeMenu = () => setIsOpen(false);
 
 	return (
